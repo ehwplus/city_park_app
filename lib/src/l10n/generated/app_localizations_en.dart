@@ -177,5 +177,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ticketsFormParksLabel => 'Valid in parks';
 
   @override
+  String get ticketsFormExpirationDate => 'Expiration date (YYYY-MM-DD)';
+
+  @override
   String get ticketsQrDialogTitle => 'QR code';
 }

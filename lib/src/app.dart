@@ -1,10 +1,11 @@
-import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:city_park_app/src/pages/home_page.dart';
 import 'package:city_park_app/src/pages/impressum_page.dart';
 import 'package:city_park_app/src/pages/privacy_page.dart';
 import 'package:city_park_app/src/pages/settings_page.dart';
 import 'package:city_park_app/src/pages/ticket_management_page.dart';
 import 'package:city_park_app/src/model/localization/locale_provider.dart';
+import 'package:city_park_app/src/model/ticket/ticket_model.dart';
+import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -71,7 +72,19 @@ class CityParkApp extends StatelessWidget {
                 ImpressumPage.routeName: (_) => const ImpressumPage(),
                 TicketManagementPage.routeName:
                     (_) => const TicketManagementPage(),
-                AddTicketPage.routeName: (_) => const AddTicketPage(),
+              },
+              onGenerateRoute: (settings) {
+                if (settings.name == AddTicketPage.routeName) {
+                  final args = settings.arguments;
+                  return MaterialPageRoute(
+                    builder:
+                        (_) => AddTicketPage(
+                          existing: args is TicketModel ? args : null,
+                        ),
+                    settings: settings,
+                  );
+                }
+                return null;
               },
             );
           },

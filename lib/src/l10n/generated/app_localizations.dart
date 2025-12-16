@@ -404,6 +404,12 @@ abstract class AppLocalizations {
   /// **'Gültig in Parks'**
   String get ticketsFormParksLabel;
 
+  /// No description provided for @ticketsFormExpirationDate.
+  ///
+  /// In de, this message translates to:
+  /// **'Ablaufdatum (YYYY-MM-DD)'**
+  String get ticketsFormExpirationDate;
+
   /// Titel für QR-Code-Dialog
   ///
   /// In de, this message translates to:

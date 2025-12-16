@@ -13,6 +13,7 @@ class TicketModel {
     required this.qrCode,
     this.cardNumber,
     required this.parks,
+    this.expirationDate,
   });
 
   factory TicketModel.fromJson(Map<String, dynamic> json) => _$TicketModelFromJson(json);
@@ -26,6 +27,8 @@ class TicketModel {
   final String? qrCode;
 
   final DateTime? birthday;
+
+  final DateTime? expirationDate;
 
   final String? cardNumber;
 

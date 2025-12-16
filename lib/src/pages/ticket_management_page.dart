@@ -2,6 +2,7 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
 import 'package:city_park_app/src/pages/add_ticket_page.dart';
+import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -66,27 +67,9 @@ class TicketManagementPage extends ConsumerWidget {
                       child: Text(l10n.ticketsManagementRemove),
                     ),
                     onTap: () {
-                      if (ticket.qrCode == null || ticket.qrCode!.isEmpty)
-                        return;
-                      showDialog<void>(
-                        context: context,
-                        builder:
-                            (_) => AlertDialog(
-                              title: Text(l10n.ticketsQrDialogTitle),
-                              content: SizedBox(
-                                height: 220,
-                                width: 220,
-                                child: Center(
-                                  child: BarcodeWidget(
-                                    barcode: Barcode.qrCode(),
-                                    data: ticket.qrCode!,
-                                    width: 200,
-                                    height: 200,
-                                  ),
-                                ),
-                              ),
-                            ),
-                      );
+                      Navigator.of(
+                        context,
+                      ).pushNamed(AddTicketPage.routeName, arguments: ticket);
                     },
                   );
                 },

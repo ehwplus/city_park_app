@@ -178,5 +178,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get ticketsFormParksLabel => 'Gültig in Parks';
 
   @override
+  String get ticketsFormExpirationDate => 'Ablaufdatum (YYYY-MM-DD)';
+
+  @override
   String get ticketsQrDialogTitle => 'QR-Code';
 }

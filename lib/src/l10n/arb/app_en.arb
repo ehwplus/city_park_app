@@ -236,6 +236,7 @@
   "@ticketsFormParksLabel": {
     "description": "Label for park selection"
   },
+  "ticketsFormExpirationDate": "Expiration date (YYYY-MM-DD)",
   "ticketsQrDialogTitle": "QR code",
   "@ticketsQrDialogTitle": {
     "description": "Title for QR code dialog"

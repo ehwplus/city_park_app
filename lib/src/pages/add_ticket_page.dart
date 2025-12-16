@@ -3,15 +3,18 @@ import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/model/park/park_enum.dart';
 import 'package:city_park_app/src/model/ticket/ticket_model.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
+import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart' as qr_scanner;
 import 'package:uuid/uuid.dart';
 
 class AddTicketPage extends ConsumerStatefulWidget {
-  const AddTicketPage({super.key});
+  const AddTicketPage({super.key, this.existing});
 
   static const routeName = '/settings/tickets/add';
+
+  final TicketModel? existing;
 
   @override
   ConsumerState<AddTicketPage> createState() => _AddTicketPageState();
@@ -22,13 +25,38 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _birthdayController = TextEditingController();
+  final _expirationDateController = TextEditingController();
   final _cardNumberController = TextEditingController();
   final _qrCodeController = TextEditingController();
   final _uuid = const Uuid();
 
+  String? _existingUuid;
+
   final bool allowToSelectPark = false;
 
   final Map<ParkEnum, bool> _selectedParks = {for (final park in ParkEnum.values) park: false};
+
+  @override
+  void initState() {
+    super.initState();
+    final existing = widget.existing;
+    if (existing != null) {
+      _existingUuid = existing.uuid;
+      _firstNameController.text = existing.firstName ?? '';
+      _lastNameController.text = existing.lastName ?? '';
+      _cardNumberController.text = existing.cardNumber ?? '';
+      _qrCodeController.text = existing.qrCode ?? '';
+      if (existing.birthday != null) {
+        _birthdayController.text = existing.birthday!.toIso8601String().split('T').first;
+      }
+      if (existing.expirationDate != null) {
+        _expirationDateController.text = existing.expirationDate!.toIso8601String().split('T').first;
+      }
+      for (final park in existing.parks) {
+        _selectedParks[park] = true;
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -64,6 +92,7 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
     final l10n = AppLocalizations.of(context)!;
     if (!_formKey.currentState!.validate()) return;
     DateTime? birthday;
+    DateTime? expirationDate;
     if (_birthdayController.text.isNotEmpty) {
       try {
         birthday = DateTime.parse(_birthdayController.text);
@@ -75,11 +104,12 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
 
     final parks = _selectedParks.entries.where((e) => e.value).map((e) => e.key).toList();
     final ticket = TicketModel(
-      uuid: _uuid.v4(),
+      uuid: _existingUuid ?? _uuid.v4(),
       firstName: _firstNameController.text.isEmpty ? null : _firstNameController.text,
       lastName: _lastNameController.text.isEmpty ? null : _lastNameController.text,
       birthday: birthday,
       qrCode: _qrCodeController.text.isEmpty ? null : _qrCodeController.text,
+      expirationDate: expirationDate,
       cardNumber: _cardNumberController.text.isEmpty ? null : _cardNumberController.text,
       parks: allowToSelectPark ? parks : [ParkEnum.EssenGrugapark],
     );
@@ -93,7 +123,7 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.ticketsAddTitle),
+        title: Text(widget.existing == null ? l10n.ticketsAddTitle : l10n.ticketsManagementTitle),
         actions: [IconButton(icon: const Icon(Icons.check), onPressed: _save)],
       ),
       body: Padding(
@@ -113,6 +143,10 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
               TextFormField(
                 controller: _birthdayController,
                 decoration: InputDecoration(labelText: l10n.ticketsFormBirthday),
+              ),
+              TextFormField(
+                controller: _expirationDateController,
+                decoration: InputDecoration(labelText: l10n.ticketsFormExpirationDate),
               ),
               TextFormField(
                 controller: _cardNumberController,
@@ -137,6 +171,7 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
                     data: _qrCodeController.text,
                     width: 180,
                     height: 180,
+                    color: colorPalette.basic0,
                   ),
                 ),
               ],
@@ -180,12 +215,6 @@ class _QrScannerPageState extends State<_QrScannerPage> {
   void reassemble() {
     super.reassemble();
     controller?.resumeCamera();
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
   }
 
   @override
