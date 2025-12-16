@@ -2,5 +2,170 @@
   "appTitle": "City park app",
   "@appTitle": {
     "description": "App for your city park"
+  },
+  "tabArrival": "Arrival",
+  "@tabArrival": {
+    "description": "Tab title for arrival/directions"
+  },
+  "tabTickets": "Tickets",
+  "@tabTickets": {
+    "description": "Tab title for entrance tickets"
+  },
+  "tabMap": "Map",
+  "@tabMap": {
+    "description": "Tab title for map"
+  },
+  "tabEvents": "Events",
+  "@tabEvents": {
+    "description": "Tab title for events"
+  },
+  "tabArrivalDescription": "Find the best route to the park by public transport, bike, or car.",
+  "@tabArrivalDescription": {
+    "description": "Description for arrival tab"
+  },
+  "tabTicketsDescription": "Details on tickets, prices, and opening times at a glance.",
+  "@tabTicketsDescription": {
+    "description": "Description for tickets tab"
+  },
+  "tabMapDescription": "Explore the park map and discover highlights nearby.",
+  "@tabMapDescription": {
+    "description": "Description for map tab"
+  },
+  "tabEventsDescription": "Current events, guided tours, and dates in the park.",
+  "@tabEventsDescription": {
+    "description": "Description for events tab"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Settings page title"
+  },
+  "privacyTitle": "Privacy",
+  "@privacyTitle": {
+    "description": "Privacy page title"
+  },
+  "impressumTitle": "Imprint",
+  "@impressumTitle": {
+    "description": "Imprint page title"
+  },
+  "privacyDescription": "Information about how your data is collected, stored, and used. Replace with your full privacy policy.",
+  "@privacyDescription": {
+    "description": "Body text for privacy page placeholder"
+  },
+  "impressumDescription": "Add legal provider information, contact, and responsible persons here.",
+  "@impressumDescription": {
+    "description": "Body text for imprint page placeholder"
+  },
+  "settingsPrivacyTileTitle": "Privacy",
+  "@settingsPrivacyTileTitle": {
+    "description": "List tile title for privacy"
+  },
+  "settingsPrivacyTileSubtitle": "Information about how your data is handled",
+  "@settingsPrivacyTileSubtitle": {
+    "description": "List tile subtitle for privacy"
+  },
+  "settingsImpressumTileTitle": "Imprint",
+  "@settingsImpressumTileTitle": {
+    "description": "List tile title for imprint"
+  },
+  "settingsImpressumTileSubtitle": "Information required by law (e.g. provider, contact)",
+  "@settingsImpressumTileSubtitle": {
+    "description": "List tile subtitle for imprint"
+  },
+  "ticketsSeasonPassQuestion": "Do you have a season pass?",
+  "@ticketsSeasonPassQuestion": {
+    "description": "Prompt shown when no ticket is stored"
+  },
+  "ticketsAddSeasonPassButton": "Add season pass",
+  "@ticketsAddSeasonPassButton": {
+    "description": "Button label to add a season pass"
+  },
+  "ticketsAvailableInfo": "You already saved season passes.",
+  "@ticketsAvailableInfo": {
+    "description": "Info shown when tickets exist"
+  },
+  "settingsTicketsTileTitle": "Tickets",
+  "@settingsTicketsTileTitle": {
+    "description": "List tile title for ticket management"
+  },
+  "settingsTicketsTileSubtitle": "Manage saved season passes",
+  "@settingsTicketsTileSubtitle": {
+    "description": "List tile subtitle for ticket management"
+  },
+  "ticketsManagementTitle": "Tickets",
+  "@ticketsManagementTitle": {
+    "description": "Title for ticket management page"
+  },
+  "ticketsManagementEmpty": "You have not saved any season passes yet.",
+  "@ticketsManagementEmpty": {
+    "description": "Empty state text for ticket management"
+  },
+  "ticketsManagementRemove": "Remove",
+  "@ticketsManagementRemove": {
+    "description": "Label for remove action on a ticket"
+  },
+  "parkStatusClosing": "The {parkName} closes in {minutes} minutes. It is open today until {time}.",
+  "@parkStatusClosing": {
+    "description": "Status when the park is open now",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "parkStatusOpensToday": "The {parkName} opens in {minutes} minutes at {time}.",
+  "@parkStatusOpensToday": {
+    "description": "Status when the park opens later today",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "parkStatusOpensFuture": "The {parkName} opens again {when} at {time}.",
+  "@parkStatusOpensFuture": {
+    "description": "Status when the park opens on a future day",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whenTomorrow": "tomorrow",
+  "@whenTomorrow": {
+    "description": "Word for tomorrow"
+  },
+  "whenDayAfterTomorrow": "the day after tomorrow",
+  "@whenDayAfterTomorrow": {
+    "description": "Word for the day after tomorrow"
+  },
+  "openingHoursNext7Days": "Opening hours for the next 7 days",
+  "@openingHoursNext7Days": {
+    "description": "Heading for upcoming opening hours list"
+  },
+  "openingHoursClosed": "Closed",
+  "@openingHoursClosed": {
+    "description": "Label for closed days"
+  },
+  "openingHoursNotFound": "No opening hours found.",
+  "@openingHoursNotFound": {
+    "description": "Shown when no opening hours are available"
   }
 }

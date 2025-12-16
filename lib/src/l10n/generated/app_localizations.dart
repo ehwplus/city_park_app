@@ -62,7 +62,8 @@ import 'app_localizations_en.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -70,7 +71,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,17 +84,18 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('de'),
-    Locale('en')
+    Locale('en'),
   ];
 
   /// App für euren Stadtpark
@@ -100,9 +103,208 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Stadtpark App'**
   String get appTitle;
+
+  /// Tab-Titel für Anfahrt
+  ///
+  /// In de, this message translates to:
+  /// **'Anfahrt'**
+  String get tabArrival;
+
+  /// Tab-Titel für Eintritt
+  ///
+  /// In de, this message translates to:
+  /// **'Eintritt'**
+  String get tabTickets;
+
+  /// Tab-Titel für Karte
+  ///
+  /// In de, this message translates to:
+  /// **'Karte'**
+  String get tabMap;
+
+  /// Tab-Titel für Veranstaltungen
+  ///
+  /// In de, this message translates to:
+  /// **'Veranstaltungen'**
+  String get tabEvents;
+
+  /// Beschreibung Anfahrt
+  ///
+  /// In de, this message translates to:
+  /// **'Finde den schnellsten Weg zum Park – per ÖPNV, Fahrrad oder Auto.'**
+  String get tabArrivalDescription;
+
+  /// Beschreibung Eintritt
+  ///
+  /// In de, this message translates to:
+  /// **'Infos zu Tickets, Preisen und Öffnungszeiten auf einen Blick.'**
+  String get tabTicketsDescription;
+
+  /// Beschreibung Karte
+  ///
+  /// In de, this message translates to:
+  /// **'Erkunde den Parkplan und entdecke Highlights in der Nähe.'**
+  String get tabMapDescription;
+
+  /// Beschreibung Veranstaltungen
+  ///
+  /// In de, this message translates to:
+  /// **'Aktuelle Events, Führungen und Termine im Park.'**
+  String get tabEventsDescription;
+
+  /// Titel Einstellungen
+  ///
+  /// In de, this message translates to:
+  /// **'Einstellungen'**
+  String get settingsTitle;
+
+  /// Titel Datenschutz
+  ///
+  /// In de, this message translates to:
+  /// **'Datenschutz'**
+  String get privacyTitle;
+
+  /// Titel Impressum
+  ///
+  /// In de, this message translates to:
+  /// **'Impressum'**
+  String get impressumTitle;
+
+  /// Text Datenschutz
+  ///
+  /// In de, this message translates to:
+  /// **'Hier stehen Hinweise zur Datenerhebung, -speicherung und -nutzung. Füge hier eure vollständige Datenschutzerklärung ein.'**
+  String get privacyDescription;
+
+  /// Text Impressum
+  ///
+  /// In de, this message translates to:
+  /// **'Füge hier die Impressumsangaben (Anbieter, Kontakt, Verantwortliche) ein.'**
+  String get impressumDescription;
+
+  /// Listeneintrag Datenschutz Titel
+  ///
+  /// In de, this message translates to:
+  /// **'Datenschutz'**
+  String get settingsPrivacyTileTitle;
+
+  /// Listeneintrag Datenschutz Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'Informationen zur Verarbeitung deiner Daten'**
+  String get settingsPrivacyTileSubtitle;
+
+  /// Listeneintrag Impressum Titel
+  ///
+  /// In de, this message translates to:
+  /// **'Impressum'**
+  String get settingsImpressumTileTitle;
+
+  /// Listeneintrag Impressum Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'Angaben gemäß § 5 TMG'**
+  String get settingsImpressumTileSubtitle;
+
+  /// Frage wenn keine Dauerkarte gespeichert ist
+  ///
+  /// In de, this message translates to:
+  /// **'Du besitzt eine Dauerkarte?'**
+  String get ticketsSeasonPassQuestion;
+
+  /// Buttonbeschriftung zum Hinzufügen einer Dauerkarte
+  ///
+  /// In de, this message translates to:
+  /// **'Dauerkarte hinzufügen'**
+  String get ticketsAddSeasonPassButton;
+
+  /// Info wenn Dauerkarten vorhanden sind
+  ///
+  /// In de, this message translates to:
+  /// **'Du hast bereits gespeicherte Dauerkarten.'**
+  String get ticketsAvailableInfo;
+
+  /// Listeneintrag Tickets Titel
+  ///
+  /// In de, this message translates to:
+  /// **'Tickets'**
+  String get settingsTicketsTileTitle;
+
+  /// Listeneintrag Tickets Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'Gespeicherte Dauerkarten verwalten'**
+  String get settingsTicketsTileSubtitle;
+
+  /// Titel Ticket-Verwaltungsseite
+  ///
+  /// In de, this message translates to:
+  /// **'Tickets'**
+  String get ticketsManagementTitle;
+
+  /// Leertext Ticket-Verwaltung
+  ///
+  /// In de, this message translates to:
+  /// **'Du hast noch keine Dauerkarten gespeichert.'**
+  String get ticketsManagementEmpty;
+
+  /// Label für Entfernen-Aktion bei Ticket
+  ///
+  /// In de, this message translates to:
+  /// **'Entfernen'**
+  String get ticketsManagementRemove;
+
+  /// Status wenn der Park jetzt geöffnet ist
+  ///
+  /// In de, this message translates to:
+  /// **'Der {parkName} schließt in {minutes} Minuten. Der Park ist heute bis {time} Uhr geöffnet.'**
+  String parkStatusClosing(String parkName, int minutes, String time);
+
+  /// Status wenn der Park später am gleichen Tag öffnet
+  ///
+  /// In de, this message translates to:
+  /// **'Der {parkName} öffnet in {minutes} Minuten um {time} Uhr.'**
+  String parkStatusOpensToday(String parkName, int minutes, String time);
+
+  /// Status wenn der Park erst an einem späteren Tag öffnet
+  ///
+  /// In de, this message translates to:
+  /// **'Der {parkName} öffnet erst {when} um {time} Uhr wieder.'**
+  String parkStatusOpensFuture(String parkName, String when, String time);
+
+  /// Wort für morgen
+  ///
+  /// In de, this message translates to:
+  /// **'morgen'**
+  String get whenTomorrow;
+
+  /// Wort für übermorgen
+  ///
+  /// In de, this message translates to:
+  /// **'übermorgen'**
+  String get whenDayAfterTomorrow;
+
+  /// Überschrift für Liste der nächsten Öffnungszeiten
+  ///
+  /// In de, this message translates to:
+  /// **'Öffnungszeiten der nächsten 7 Tage'**
+  String get openingHoursNext7Days;
+
+  /// Label für geschlossene Tage
+  ///
+  /// In de, this message translates to:
+  /// **'Geschlossen'**
+  String get openingHoursClosed;
+
+  /// Text wenn keine Zeiten vorhanden
+  ///
+  /// In de, this message translates to:
+  /// **'Keine Öffnungszeiten gefunden.'**
+  String get openingHoursNotFound;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -111,25 +313,26 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['de', 'en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['de', 'en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'de': return AppLocalizationsDe();
-    case 'en': return AppLocalizationsEn();
+    case 'de':
+      return AppLocalizationsDe();
+    case 'en':
+      return AppLocalizationsEn();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
+    'that was used.',
   );
 }

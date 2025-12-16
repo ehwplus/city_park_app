@@ -1,66 +1,70 @@
-import 'package:city_park_app/src/model/opening_hours.dart';
-import 'package:city_park_app/src/model/park_enum.dart';
+import 'package:city_park_app/src/model/opening_hours/date.dart';
+import 'package:city_park_app/src/model/opening_hours/opening_hours.dart';
 
-extension OpeningHoursExtension on OpeningHours {
-
-  List<OpeningHours> getOpeningHours(ParkEnum park) {
-    switch (park) {
-      case ParkEnum.EssenGrugapark:
-        return _openingHoursGrugapark;
-      case ParkEnum.MannheimLuistenpark:
-        return _openingHoursLuisenpark;
-      case ParkEnum.MannheimHerzogenriedpark:
-        return _openingHoursHerzogenriedpark;
-    }
-  }
-}
-
-final _openingHoursGrugapark = [
+final openingHoursWestfalenpark = [
   OpeningHours(
-    season: Season(start: DateTime(2025, 1, 1), end: DateTime(2025, 12, 31)),
+    season: Season(start: Date(month: 1, day: 1), end: Date(month: 12, day: 31)),
     openingTimeType: OpeningTimeType.dailyTicket,
-    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 23, endMinute: 59),
+    openingTime: TimeRange(startHour: 9, endHour: 21),
+  ),
+];
+
+final openingHoursGrugapark = [
+  OpeningHours(
+    season: Season(start: Date(month: 1, day: 1), end: Date(month: 12, day: 30)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 16),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 1, 1), end: DateTime(2025, 12, 31)),
+    season: Season(start: Date(month: 1, day: 1), end: Date(month: 12, day: 31)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 23, endMinute: 00),
+  ),
+  OpeningHours(
+    season: Season(start: Date(month: 12, day: 31), end: Date(month: 12, day: 30)),
     openingTimeType: OpeningTimeType.annualPass,
-    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 23, endMinute: 59),
+    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 23, endMinute: 00),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 4, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 1, day: 1), end: Date(month: 12, day: 31)),
+    openingTimeType: OpeningTimeType.annualPass,
+    openingTime: TimeRange(startHour: 7, startMinute: 30, endHour: 23, endMinute: 00),
+  ),
+  OpeningHours(
+    season: Season(start: Date(month: 4, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Kleintiergarten und Bauernhof',
     openingTime: TimeRange(startHour: 11, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 30), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 3, day: 30), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Grugabahn',
     note: '''
-Die Grugabahn fährt während der Sommersaison täglich von 11 bis 18 Uhr. Im Jahr 2025 startet die Betriebszeit am 3ß.3. Bei schlechtem Wetter finden keine Fahrten statt! Nach Ende der Herbstferien, spätestens aber während der Gültigkeit der ermäßigten Eintrittspreise in der Wintersaison, hat die Grugabahn Betriebspause. Info-Tel.: 0201 - 88 83 106. Die Fahrkarten kosten 5,- Euro für Erwachsene und 2,- Euro für Kinder und Jugendliche im Alter von 4 bis 15 Jahren.
+Die Grugabahn fährt während der Sommersaison täglich von 11 bis 18 Uhr. Die Betriebszeit startet am 3ß.3. Bei schlechtem Wetter finden keine Fahrten statt! Nach Ende der Herbstferien, spätestens aber während der Gültigkeit der ermäßigten Eintrittspreise in der Wintersaison, hat die Grugabahn Betriebspause. Info-Tel.: 0201 - 88 83 106. Die Fahrkarten kosten 5,- Euro für Erwachsene und 2,- Euro für Kinder und Jugendliche im Alter von 4 bis 15 Jahren.
     ''',
     openingTime: TimeRange(startHour: 11, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 30), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 3, day: 30), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Vogelfreifluganlage',
     openingTime: TimeRange(startHour: 11, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 30), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 3, day: 30), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Pflanzenschauhäuser',
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 30), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 3, day: 30), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Spielhaus',
-    openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 19, endMinute: 0),
+    openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 30), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 3, day: 30), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'Damwildgehege',
     note: '''
@@ -87,165 +91,165 @@ Das Damwildgehege ist während der Brunftzeit der Hirsche geschlossen. Die Brunf
   ),
 ];
 
-final _openingHoursLuisenpark = [
+final openingHoursLuisenpark = [
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 10, 1), end: DateTime(2025, 10, 31)),
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 16, endMinute: 0),
   ),
 
   /// Annual Pass
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 20, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 10, 1), end: DateTime(2025, 10, 31)),
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 19, endMinute: 0),
   ),
 
   /// Ticket Office
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 3, 31)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 3, day: 31)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 4, 1), end: DateTime(2025, 8, 31)),
+    season: Season(start: Date(month: 4, day: 1), end: Date(month: 8, day: 31)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 9, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 9, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 10, 1), end: DateTime(2025, 10, 31)),
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 16, endMinute: 0),
   ),
 
   /// UNTERWASSERWELT
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'UNTERWASSERWELT',
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 17, endMinute: 30),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'UNTERWASSERWELT',
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2026, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.other,
     specifier: 'UNTERWASSERWELT',
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 16, endMinute: 30),
   ),
 ];
 
-final _openingHoursHerzogenriedpark = [
+final openingHoursHerzogenriedpark = [
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 10, 1), end: DateTime(2025, 10, 31)),
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.dailyTicket,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 16, endMinute: 0),
   ),
 
   /// Annual Pass
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 19, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 20, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 10, 1), end: DateTime(2025, 10, 31)),
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
     openingTimeType: OpeningTimeType.annualPass,
     openingTime: TimeRange(startHour: 8, startMinute: 0, endHour: 19, endMinute: 0),
   ),
 
   /// Ticket Office
   OpeningHours(
-    season: Season(start: DateTime(2025, 3, 1), end: DateTime(2025, 4, 30)),
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 4, day: 30)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 5, 1), end: DateTime(2025, 6, 30)),
+    season: Season(start: Date(month: 5, day: 1), end: Date(month: 6, day: 30)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 10, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 7, 1), end: DateTime(2025, 8, 31)),
+    season: Season(start: Date(month: 7, day: 1), end: Date(month: 8, day: 31)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 18, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 9, 1), end: DateTime(2025, 9, 30)),
+    season: Season(start: Date(month: 9, day: 1), end: Date(month: 9, day: 30)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: TimeRange(startHour: 9, startMinute: 0, endHour: 17, endMinute: 0),
   ),
   OpeningHours(
-    season: Season(start: DateTime(2025, 11, 1), end: DateTime(2025, 2, 28)),
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 28)),
     openingTimeType: OpeningTimeType.ticketOffice,
     openingTime: null,
   ),

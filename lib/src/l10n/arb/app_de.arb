@@ -2,5 +2,170 @@
   "appTitle": "Stadtpark App",
   "@appTitle": {
     "description": "App für euren Stadtpark"
+  },
+  "tabArrival": "Anfahrt",
+  "@tabArrival": {
+    "description": "Tab-Titel für Anfahrt"
+  },
+  "tabTickets": "Eintritt",
+  "@tabTickets": {
+    "description": "Tab-Titel für Eintritt"
+  },
+  "tabMap": "Karte",
+  "@tabMap": {
+    "description": "Tab-Titel für Karte"
+  },
+  "tabEvents": "Veranstaltungen",
+  "@tabEvents": {
+    "description": "Tab-Titel für Veranstaltungen"
+  },
+  "tabArrivalDescription": "Finde den schnellsten Weg zum Park – per ÖPNV, Fahrrad oder Auto.",
+  "@tabArrivalDescription": {
+    "description": "Beschreibung Anfahrt"
+  },
+  "tabTicketsDescription": "Infos zu Tickets, Preisen und Öffnungszeiten auf einen Blick.",
+  "@tabTicketsDescription": {
+    "description": "Beschreibung Eintritt"
+  },
+  "tabMapDescription": "Erkunde den Parkplan und entdecke Highlights in der Nähe.",
+  "@tabMapDescription": {
+    "description": "Beschreibung Karte"
+  },
+  "tabEventsDescription": "Aktuelle Events, Führungen und Termine im Park.",
+  "@tabEventsDescription": {
+    "description": "Beschreibung Veranstaltungen"
+  },
+  "settingsTitle": "Einstellungen",
+  "@settingsTitle": {
+    "description": "Titel Einstellungen"
+  },
+  "privacyTitle": "Datenschutz",
+  "@privacyTitle": {
+    "description": "Titel Datenschutz"
+  },
+  "impressumTitle": "Impressum",
+  "@impressumTitle": {
+    "description": "Titel Impressum"
+  },
+  "privacyDescription": "Hier stehen Hinweise zur Datenerhebung, -speicherung und -nutzung. Füge hier eure vollständige Datenschutzerklärung ein.",
+  "@privacyDescription": {
+    "description": "Text Datenschutz"
+  },
+  "impressumDescription": "Füge hier die Impressumsangaben (Anbieter, Kontakt, Verantwortliche) ein.",
+  "@impressumDescription": {
+    "description": "Text Impressum"
+  },
+  "settingsPrivacyTileTitle": "Datenschutz",
+  "@settingsPrivacyTileTitle": {
+    "description": "Listeneintrag Datenschutz Titel"
+  },
+  "settingsPrivacyTileSubtitle": "Informationen zur Verarbeitung deiner Daten",
+  "@settingsPrivacyTileSubtitle": {
+    "description": "Listeneintrag Datenschutz Untertitel"
+  },
+  "settingsImpressumTileTitle": "Impressum",
+  "@settingsImpressumTileTitle": {
+    "description": "Listeneintrag Impressum Titel"
+  },
+  "settingsImpressumTileSubtitle": "Angaben gemäß § 5 TMG",
+  "@settingsImpressumTileSubtitle": {
+    "description": "Listeneintrag Impressum Untertitel"
+  },
+  "ticketsSeasonPassQuestion": "Du besitzt eine Dauerkarte?",
+  "@ticketsSeasonPassQuestion": {
+    "description": "Frage wenn keine Dauerkarte gespeichert ist"
+  },
+  "ticketsAddSeasonPassButton": "Dauerkarte hinzufügen",
+  "@ticketsAddSeasonPassButton": {
+    "description": "Buttonbeschriftung zum Hinzufügen einer Dauerkarte"
+  },
+  "ticketsAvailableInfo": "Du hast bereits gespeicherte Dauerkarten.",
+  "@ticketsAvailableInfo": {
+    "description": "Info wenn Dauerkarten vorhanden sind"
+  },
+  "settingsTicketsTileTitle": "Tickets",
+  "@settingsTicketsTileTitle": {
+    "description": "Listeneintrag Tickets Titel"
+  },
+  "settingsTicketsTileSubtitle": "Gespeicherte Dauerkarten verwalten",
+  "@settingsTicketsTileSubtitle": {
+    "description": "Listeneintrag Tickets Untertitel"
+  },
+  "ticketsManagementTitle": "Tickets",
+  "@ticketsManagementTitle": {
+    "description": "Titel Ticket-Verwaltungsseite"
+  },
+  "ticketsManagementEmpty": "Du hast noch keine Dauerkarten gespeichert.",
+  "@ticketsManagementEmpty": {
+    "description": "Leertext Ticket-Verwaltung"
+  },
+  "ticketsManagementRemove": "Entfernen",
+  "@ticketsManagementRemove": {
+    "description": "Label für Entfernen-Aktion bei Ticket"
+  },
+  "parkStatusClosing": "Der {parkName} schließt in {minutes} Minuten. Der Park ist heute bis {time} Uhr geöffnet.",
+  "@parkStatusClosing": {
+    "description": "Status wenn der Park jetzt geöffnet ist",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "parkStatusOpensToday": "Der {parkName} öffnet in {minutes} Minuten um {time} Uhr.",
+  "@parkStatusOpensToday": {
+    "description": "Status wenn der Park später am gleichen Tag öffnet",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "parkStatusOpensFuture": "Der {parkName} öffnet erst {when} um {time} Uhr wieder.",
+  "@parkStatusOpensFuture": {
+    "description": "Status wenn der Park erst an einem späteren Tag öffnet",
+    "placeholders": {
+      "parkName": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whenTomorrow": "morgen",
+  "@whenTomorrow": {
+    "description": "Wort für morgen"
+  },
+  "whenDayAfterTomorrow": "übermorgen",
+  "@whenDayAfterTomorrow": {
+    "description": "Wort für übermorgen"
+  },
+  "openingHoursNext7Days": "Öffnungszeiten der nächsten 7 Tage",
+  "@openingHoursNext7Days": {
+    "description": "Überschrift für Liste der nächsten Öffnungszeiten"
+  },
+  "openingHoursClosed": "Geschlossen",
+  "@openingHoursClosed": {
+    "description": "Label für geschlossene Tage"
+  },
+  "openingHoursNotFound": "Keine Öffnungszeiten gefunden.",
+  "@openingHoursNotFound": {
+    "description": "Text wenn keine Zeiten vorhanden"
   }
 }
