@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   shared_preferences: ^2.3.2
   fl_ui_config: ^0.1.5
+  flutter_svg: ^2.2.3
 
 dev_dependencies:
   flutter_test:

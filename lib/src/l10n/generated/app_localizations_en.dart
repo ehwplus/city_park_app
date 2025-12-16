@@ -124,4 +124,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openingHoursNotFound => 'No opening hours found.';
+
+  @override
+  String get settingsThemeTitle => 'Appearance';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsLanguageTitle => 'Language';
+
+  @override
+  String get settingsLanguageSystem => 'System';
+
+  @override
+  String get settingsLanguageGerman => 'Deutsch';
+
+  @override
+  String get settingsLanguageEnglish => 'English';
 }

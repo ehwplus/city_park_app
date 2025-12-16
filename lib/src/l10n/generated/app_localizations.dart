@@ -301,6 +301,54 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Keine Öffnungszeiten gefunden.'**
   String get openingHoursNotFound;
+
+  /// Einstellungstitel für Theme/Design
+  ///
+  /// In de, this message translates to:
+  /// **'Darstellung'**
+  String get settingsThemeTitle;
+
+  /// Theme-Option System
+  ///
+  /// In de, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
+
+  /// Theme-Option Hell
+  ///
+  /// In de, this message translates to:
+  /// **'Hell'**
+  String get settingsThemeLight;
+
+  /// Theme-Option Dunkel
+  ///
+  /// In de, this message translates to:
+  /// **'Dunkel'**
+  String get settingsThemeDark;
+
+  /// Einstellungstitel für Sprache
+  ///
+  /// In de, this message translates to:
+  /// **'Sprache'**
+  String get settingsLanguageTitle;
+
+  /// Sprach-Option System
+  ///
+  /// In de, this message translates to:
+  /// **'System'**
+  String get settingsLanguageSystem;
+
+  /// Sprach-Option Deutsch
+  ///
+  /// In de, this message translates to:
+  /// **'Deutsch'**
+  String get settingsLanguageGerman;
+
+  /// Sprach-Option Englisch
+  ///
+  /// In de, this message translates to:
+  /// **'English'**
+  String get settingsLanguageEnglish;
 }
 
 class _AppLocalizationsDelegate

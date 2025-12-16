@@ -167,5 +167,37 @@
   "openingHoursNotFound": "No opening hours found.",
   "@openingHoursNotFound": {
     "description": "Shown when no opening hours are available"
+  },
+  "settingsThemeTitle": "Appearance",
+  "@settingsThemeTitle": {
+    "description": "Settings title for theme/appearance"
+  },
+  "settingsThemeSystem": "System",
+  "@settingsThemeSystem": {
+    "description": "Theme option system"
+  },
+  "settingsThemeLight": "Light",
+  "@settingsThemeLight": {
+    "description": "Theme option light"
+  },
+  "settingsThemeDark": "Dark",
+  "@settingsThemeDark": {
+    "description": "Theme option dark"
+  },
+  "settingsLanguageTitle": "Language",
+  "@settingsLanguageTitle": {
+    "description": "Settings title for language"
+  },
+  "settingsLanguageSystem": "System",
+  "@settingsLanguageSystem": {
+    "description": "Language option system"
+  },
+  "settingsLanguageGerman": "Deutsch",
+  "@settingsLanguageGerman": {
+    "description": "Language option German"
+  },
+  "settingsLanguageEnglish": "English",
+  "@settingsLanguageEnglish": {
+    "description": "Language option English"
   }
 }

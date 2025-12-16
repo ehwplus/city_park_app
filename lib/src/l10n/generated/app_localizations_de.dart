@@ -125,4 +125,28 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get openingHoursNotFound => 'Keine Öffnungszeiten gefunden.';
+
+  @override
+  String get settingsThemeTitle => 'Darstellung';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Hell';
+
+  @override
+  String get settingsThemeDark => 'Dunkel';
+
+  @override
+  String get settingsLanguageTitle => 'Sprache';
+
+  @override
+  String get settingsLanguageSystem => 'System';
+
+  @override
+  String get settingsLanguageGerman => 'Deutsch';
+
+  @override
+  String get settingsLanguageEnglish => 'English';
 }

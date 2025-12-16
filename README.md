@@ -14,4 +14,4 @@ Planned range of functions:
 - The app should support more than one park, whereby you as the user select which parks should be visible. Not all features must be available for every supported park.
 
 ## The concept
-The source code is and remains public. This project thrives on developers making public contributions to the project. The GNU Affero General Public License v3.0 ensures that the code of forks must also be published again.
+The source code is and remains public. This project thrives on developers making public contributions to the project.
