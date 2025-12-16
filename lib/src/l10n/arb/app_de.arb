@@ -199,5 +199,45 @@
   "settingsLanguageEnglish": "English",
   "@settingsLanguageEnglish": {
     "description": "Sprach-Option Englisch"
+  },
+  "ticketsAddTitle": "Dauerkarte hinzufügen",
+  "@ticketsAddTitle": {
+    "description": "Seitentitel für das Hinzufügen einer Dauerkarte"
+  },
+  "ticketsFormFirstName": "Vorname",
+  "@ticketsFormFirstName": {
+    "description": "Formularfeld Vorname"
+  },
+  "ticketsFormLastName": "Nachname",
+  "@ticketsFormLastName": {
+    "description": "Formularfeld Nachname"
+  },
+  "ticketsFormBirthday": "Geburtsdatum (YYYY-MM-DD)",
+  "@ticketsFormBirthday": {
+    "description": "Formularfeld Geburtsdatum"
+  },
+  "ticketsFormInvalidBirthday": "Geburtsdatum muss YYYY-MM-DD sein",
+  "@ticketsFormInvalidBirthday": {
+    "description": "Fehlermeldung für ungültiges Geburtsdatum"
+  },
+  "ticketsFormCardNumber": "Kartennummer",
+  "@ticketsFormCardNumber": {
+    "description": "Formularfeld Kartennummer"
+  },
+  "ticketsFormQrCode": "QR-Code / Seriennummer",
+  "@ticketsFormQrCode": {
+    "description": "Formularfeld QR-Code"
+  },
+  "ticketsFormScanButton": "QR-Code scannen",
+  "@ticketsFormScanButton": {
+    "description": "Button zum Scannen des QR-Codes"
+  },
+  "ticketsFormParksLabel": "Gültig in Parks",
+  "@ticketsFormParksLabel": {
+    "description": "Label für Parkauswahl"
+  },
+  "ticketsQrDialogTitle": "QR-Code",
+  "@ticketsQrDialogTitle": {
+    "description": "Titel für QR-Code-Dialog"
   }
 }

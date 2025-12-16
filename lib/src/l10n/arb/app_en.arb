@@ -199,5 +199,45 @@
   "settingsLanguageEnglish": "English",
   "@settingsLanguageEnglish": {
     "description": "Language option English"
+  },
+  "ticketsAddTitle": "Add season pass",
+  "@ticketsAddTitle": {
+    "description": "Page title for adding a season pass"
+  },
+  "ticketsFormFirstName": "First name",
+  "@ticketsFormFirstName": {
+    "description": "Form field first name"
+  },
+  "ticketsFormLastName": "Last name",
+  "@ticketsFormLastName": {
+    "description": "Form field last name"
+  },
+  "ticketsFormBirthday": "Birthday (YYYY-MM-DD)",
+  "@ticketsFormBirthday": {
+    "description": "Form field birthday"
+  },
+  "ticketsFormInvalidBirthday": "Birthday must be YYYY-MM-DD",
+  "@ticketsFormInvalidBirthday": {
+    "description": "Error for invalid birthday"
+  },
+  "ticketsFormCardNumber": "Card number",
+  "@ticketsFormCardNumber": {
+    "description": "Form field card number"
+  },
+  "ticketsFormQrCode": "QR code / serial number",
+  "@ticketsFormQrCode": {
+    "description": "Form field QR code"
+  },
+  "ticketsFormScanButton": "Scan QR code",
+  "@ticketsFormScanButton": {
+    "description": "Button to scan QR code"
+  },
+  "ticketsFormParksLabel": "Valid in parks",
+  "@ticketsFormParksLabel": {
+    "description": "Label for park selection"
+  },
+  "ticketsQrDialogTitle": "QR code",
+  "@ticketsQrDialogTitle": {
+    "description": "Title for QR code dialog"
   }
 }

@@ -148,4 +148,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsLanguageEnglish => 'English';
+
+  @override
+  String get ticketsAddTitle => 'Add season pass';
+
+  @override
+  String get ticketsFormFirstName => 'First name';
+
+  @override
+  String get ticketsFormLastName => 'Last name';
+
+  @override
+  String get ticketsFormBirthday => 'Birthday (YYYY-MM-DD)';
+
+  @override
+  String get ticketsFormInvalidBirthday => 'Birthday must be YYYY-MM-DD';
+
+  @override
+  String get ticketsFormCardNumber => 'Card number';
+
+  @override
+  String get ticketsFormQrCode => 'QR code / serial number';
+
+  @override
+  String get ticketsFormScanButton => 'Scan QR code';
+
+  @override
+  String get ticketsFormParksLabel => 'Valid in parks';
+
+  @override
+  String get ticketsQrDialogTitle => 'QR code';
 }

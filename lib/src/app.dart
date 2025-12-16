@@ -1,3 +1,4 @@
+import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:city_park_app/src/pages/home_page.dart';
 import 'package:city_park_app/src/pages/impressum_page.dart';
 import 'package:city_park_app/src/pages/privacy_page.dart';
@@ -70,6 +71,7 @@ class CityParkApp extends StatelessWidget {
                 ImpressumPage.routeName: (_) => const ImpressumPage(),
                 TicketManagementPage.routeName:
                     (_) => const TicketManagementPage(),
+                AddTicketPage.routeName: (_) => const AddTicketPage(),
               },
             );
           },

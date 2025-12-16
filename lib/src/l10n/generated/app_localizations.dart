@@ -349,6 +349,66 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'English'**
   String get settingsLanguageEnglish;
+
+  /// Seitentitel für das Hinzufügen einer Dauerkarte
+  ///
+  /// In de, this message translates to:
+  /// **'Dauerkarte hinzufügen'**
+  String get ticketsAddTitle;
+
+  /// Formularfeld Vorname
+  ///
+  /// In de, this message translates to:
+  /// **'Vorname'**
+  String get ticketsFormFirstName;
+
+  /// Formularfeld Nachname
+  ///
+  /// In de, this message translates to:
+  /// **'Nachname'**
+  String get ticketsFormLastName;
+
+  /// Formularfeld Geburtsdatum
+  ///
+  /// In de, this message translates to:
+  /// **'Geburtsdatum (YYYY-MM-DD)'**
+  String get ticketsFormBirthday;
+
+  /// Fehlermeldung für ungültiges Geburtsdatum
+  ///
+  /// In de, this message translates to:
+  /// **'Geburtsdatum muss YYYY-MM-DD sein'**
+  String get ticketsFormInvalidBirthday;
+
+  /// Formularfeld Kartennummer
+  ///
+  /// In de, this message translates to:
+  /// **'Kartennummer'**
+  String get ticketsFormCardNumber;
+
+  /// Formularfeld QR-Code
+  ///
+  /// In de, this message translates to:
+  /// **'QR-Code / Seriennummer'**
+  String get ticketsFormQrCode;
+
+  /// Button zum Scannen des QR-Codes
+  ///
+  /// In de, this message translates to:
+  /// **'QR-Code scannen'**
+  String get ticketsFormScanButton;
+
+  /// Label für Parkauswahl
+  ///
+  /// In de, this message translates to:
+  /// **'Gültig in Parks'**
+  String get ticketsFormParksLabel;
+
+  /// Titel für QR-Code-Dialog
+  ///
+  /// In de, this message translates to:
+  /// **'QR-Code'**
+  String get ticketsQrDialogTitle;
 }
 
 class _AppLocalizationsDelegate

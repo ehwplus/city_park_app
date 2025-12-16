@@ -37,6 +37,9 @@ dependencies:
   json_annotation: ">=4.0.1"
   flutter_riverpod: ^2.5.1
   shared_preferences: ^2.3.2
+  uuid: ^4.5.0
+  barcode_widget: ^2.0.4
+  qr_code_scanner_plus: ^2.0.14
   fl_ui_config: ^0.1.5
   flutter_svg: ^2.2.3
 

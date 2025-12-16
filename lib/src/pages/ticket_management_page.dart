@@ -1,5 +1,7 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
+import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,6 +18,12 @@ class TicketManagementPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.ticketsManagementTitle)),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed:
+            () => Navigator.of(context).pushNamed(AddTicketPage.routeName),
+        icon: const Icon(Icons.add),
+        label: Text(l10n.ticketsAddSeasonPassButton),
+      ),
       body:
           tickets.isEmpty
               ? Center(
@@ -57,6 +65,29 @@ class TicketManagementPage extends ConsumerWidget {
                       onPressed: () async => notifier.removeById(ticket.uuid),
                       child: Text(l10n.ticketsManagementRemove),
                     ),
+                    onTap: () {
+                      if (ticket.qrCode == null || ticket.qrCode!.isEmpty)
+                        return;
+                      showDialog<void>(
+                        context: context,
+                        builder:
+                            (_) => AlertDialog(
+                              title: Text(l10n.ticketsQrDialogTitle),
+                              content: SizedBox(
+                                height: 220,
+                                width: 220,
+                                child: Center(
+                                  child: BarcodeWidget(
+                                    barcode: Barcode.qrCode(),
+                                    data: ticket.qrCode!,
+                                    width: 200,
+                                    height: 200,
+                                  ),
+                                ),
+                              ),
+                            ),
+                      );
+                    },
                   );
                 },
               ),

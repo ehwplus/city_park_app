@@ -149,4 +149,34 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get settingsLanguageEnglish => 'English';
+
+  @override
+  String get ticketsAddTitle => 'Dauerkarte hinzufügen';
+
+  @override
+  String get ticketsFormFirstName => 'Vorname';
+
+  @override
+  String get ticketsFormLastName => 'Nachname';
+
+  @override
+  String get ticketsFormBirthday => 'Geburtsdatum (YYYY-MM-DD)';
+
+  @override
+  String get ticketsFormInvalidBirthday => 'Geburtsdatum muss YYYY-MM-DD sein';
+
+  @override
+  String get ticketsFormCardNumber => 'Kartennummer';
+
+  @override
+  String get ticketsFormQrCode => 'QR-Code / Seriennummer';
+
+  @override
+  String get ticketsFormScanButton => 'QR-Code scannen';
+
+  @override
+  String get ticketsFormParksLabel => 'Gültig in Parks';
+
+  @override
+  String get ticketsQrDialogTitle => 'QR-Code';
 }
