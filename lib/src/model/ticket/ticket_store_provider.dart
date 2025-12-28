@@ -83,7 +83,7 @@ TicketModel _ticketFromMap(Map<String, dynamic> json) {
           .map((park) => park.toString())
           .map(
             (parkName) =>
-                ParkEnum.values.firstWhere((park) => park.name == parkName, orElse: () => ParkEnum.EssenGrugapark),
+                ParkEnum.values.firstWhere((park) => park.name == parkName, orElse: () => ParkEnum.essenGrugapark),
           )
           .toList();
 
@@ -101,6 +101,7 @@ TicketModel _ticketFromMap(Map<String, dynamic> json) {
     qrCode: json['qrCode'] as String?,
     cardNumber: json['cardNumber'] as String?,
     parks: parks,
+    type: TicketType.seasonPass,
   );
 }
 

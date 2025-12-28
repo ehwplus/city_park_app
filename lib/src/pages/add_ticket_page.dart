@@ -111,7 +111,8 @@ class _AddTicketPageState extends ConsumerState<AddTicketPage> {
       qrCode: _qrCodeController.text.isEmpty ? null : _qrCodeController.text,
       expirationDate: expirationDate,
       cardNumber: _cardNumberController.text.isEmpty ? null : _cardNumberController.text,
-      parks: allowToSelectPark ? parks : [ParkEnum.EssenGrugapark],
+      parks: allowToSelectPark ? parks : [ParkEnum.essenGrugapark],
+      type: TicketType.seasonPass,
     );
 
     await ref.read(ticketStoreProvider.notifier).add(ticket);

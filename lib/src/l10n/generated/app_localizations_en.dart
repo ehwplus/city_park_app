@@ -18,7 +18,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabTickets => 'Tickets';
 
   @override
-  String get tabMap => 'Map';
+  String get tabMap => 'Expore';
 
   @override
   String get tabEvents => 'Events';
@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tabMapDescription =>
-      'Explore the park map and discover highlights nearby.';
+      'Explore the park and discover highlights nearby.';
 
   @override
   String get tabEventsDescription =>
@@ -71,13 +71,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Information required by law (e.g. provider, contact)';
 
   @override
+  String get ticketSingle => 'Single ticket';
+
+  @override
+  String get ticketSeasonPass => 'Season pass';
+
+  @override
   String get ticketsSeasonPassQuestion => 'Do you have a season pass?';
 
   @override
   String get ticketsAddSeasonPassButton => 'Add season pass';
 
   @override
-  String get ticketsAvailableInfo => 'You already saved season passes.';
+  String get ticketsAvailableInfo => 'Would you like to add more tickets?';
 
   @override
   String get settingsTicketsTileTitle => 'Tickets';
@@ -94,6 +100,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ticketsManagementRemove => 'Remove';
+
+  @override
+  String get ticketsBuyTicketButton => 'Buy ticket';
+
+  @override
+  String get ticketsOpenShopError => 'Could not open ticket shop.';
 
   @override
   String parkStatusClosing(String parkName, int minutes, String time) {

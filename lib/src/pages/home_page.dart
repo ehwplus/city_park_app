@@ -1,3 +1,4 @@
+import 'package:city_park_app/src/feature_flags.dart';
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/pages/settings_page.dart';
 import 'package:city_park_app/src/pages/ticket_management_page.dart';
@@ -15,7 +16,7 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
-  int _currentIndex = 1;
+  int _currentIndex = FeatureFlags.tabArrivalEnabled ? 1 : 0;
 
   void _onTabSelected(int index) {
     setState(() {
@@ -27,7 +28,8 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final tabs = [
-      TabContent(title: l10n.tabArrival, description: l10n.tabArrivalDescription, icon: Icons.directions),
+      if (FeatureFlags.tabArrivalEnabled)
+        TabContent(title: l10n.tabArrival, description: l10n.tabArrivalDescription, icon: Icons.directions),
       TicketsTabContent(
         title: l10n.tabTickets,
         description: l10n.tabTicketsDescription,
@@ -40,7 +42,12 @@ class _HomePageState extends ConsumerState<HomePage> {
       TabContent(title: l10n.tabEvents, description: l10n.tabEventsDescription, icon: Icons.event),
     ];
 
-    final tabTitles = [l10n.tabArrival, l10n.tabTickets, l10n.tabMap, l10n.tabEvents];
+    final tabTitles = [
+      if (FeatureFlags.tabArrivalEnabled) l10n.tabArrival,
+      l10n.tabTickets,
+      l10n.tabMap,
+      l10n.tabEvents,
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -57,7 +64,8 @@ class _HomePageState extends ConsumerState<HomePage> {
         currentIndex: _currentIndex,
         onTap: _onTabSelected,
         items: [
-          BottomNavigationBarItem(icon: const Icon(Icons.directions), label: l10n.tabArrival),
+          if (FeatureFlags.tabArrivalEnabled)
+            BottomNavigationBarItem(icon: const Icon(Icons.directions), label: l10n.tabArrival),
           BottomNavigationBarItem(icon: const Icon(Icons.confirmation_number), label: l10n.tabTickets),
           BottomNavigationBarItem(icon: const Icon(Icons.map), label: l10n.tabMap),
           BottomNavigationBarItem(icon: const Icon(Icons.event), label: l10n.tabEvents),

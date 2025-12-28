@@ -12,7 +12,7 @@ class ExploreTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.EssenGrugapark;
+    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
     final assetPath = 'assets/${park.assetFolder}/map.svg';
     final theme = Theme.of(context);
 
@@ -45,8 +45,6 @@ class ExploreTab extends ConsumerWidget {
               ),
             ),
           ),
-          const SizedBox(height: 8),
-          Text(park.name, style: theme.textTheme.labelLarge, textAlign: TextAlign.center),
         ],
       ),
     );

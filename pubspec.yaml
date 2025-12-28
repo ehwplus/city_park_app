@@ -42,6 +42,8 @@ dependencies:
   qr_code_scanner_plus: ^2.0.14
   fl_ui_config: ^0.1.5
   flutter_svg: ^2.2.3
+  card_stack_widget: ^0.1.6
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:

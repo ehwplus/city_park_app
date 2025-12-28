@@ -23,14 +23,14 @@ void main() {
     });
 
     test('setPark updates the state', () async {
-      await container.read(lastUsedParkProvider.notifier).setPark(ParkEnum.EssenGrugapark);
+      await container.read(lastUsedParkProvider.notifier).setPark(ParkEnum.essenGrugapark);
 
-      expect(container.read(lastUsedParkProvider), ParkEnum.EssenGrugapark);
+      expect(container.read(lastUsedParkProvider), ParkEnum.essenGrugapark);
     });
 
     test('clear resets the state to null', () async {
       final notifier = container.read(lastUsedParkProvider.notifier);
-      await notifier.setPark(ParkEnum.DortmundWestfalenpark);
+      await notifier.setPark(ParkEnum.dortmundWestfalenpark);
 
       await notifier.clear();
 
@@ -38,12 +38,12 @@ void main() {
     });
 
     test('persists last park across reload', () async {
-      await container.read(lastUsedParkProvider.notifier).setPark(ParkEnum.MannheimHerzogenriedpark);
+      await container.read(lastUsedParkProvider.notifier).setPark(ParkEnum.mannheimHerzogenriedpark);
 
       final secondContainer = ProviderContainer();
       await secondContainer.read(lastUsedParkProvider.notifier).loadFromStorage();
 
-      expect(secondContainer.read(lastUsedParkProvider), ParkEnum.MannheimHerzogenriedpark);
+      expect(secondContainer.read(lastUsedParkProvider), ParkEnum.mannheimHerzogenriedpark);
       secondContainer.dispose();
     });
   });

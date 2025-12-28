@@ -71,6 +71,8 @@
   "@settingsImpressumTileSubtitle": {
     "description": "List tile subtitle for imprint"
   },
+  "ticketSingle": "Single ticket",
+  "ticketSeasonPass": "Season pass",
   "ticketsSeasonPassQuestion": "Do you have a season pass?",
   "@ticketsSeasonPassQuestion": {
     "description": "Prompt shown when no ticket is stored"
@@ -79,7 +81,7 @@
   "@ticketsAddSeasonPassButton": {
     "description": "Button label to add a season pass"
   },
-  "ticketsAvailableInfo": "You already saved season passes.",
+  "ticketsAvailableInfo": "Would you like to add more tickets?",
   "@ticketsAvailableInfo": {
     "description": "Info shown when tickets exist"
   },
@@ -102,6 +104,14 @@
   "ticketsManagementRemove": "Remove",
   "@ticketsManagementRemove": {
     "description": "Label for remove action on a ticket"
+  },
+  "ticketsBuyTicketButton": "Buy ticket",
+  "@ticketsBuyTicketButton": {
+    "description": "Button label to open the ticket shop"
+  },
+  "ticketsOpenShopError": "Could not open ticket shop.",
+  "@ticketsOpenShopError": {
+    "description": "Error message when the ticket shop cannot be opened"
   },
   "parkStatusClosing": "The {parkName} closes in {minutes} minutes. It is open today until {time}.",
   "@parkStatusClosing": {

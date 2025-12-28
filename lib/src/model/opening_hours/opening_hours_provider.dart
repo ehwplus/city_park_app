@@ -8,6 +8,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 ///
 /// Falls back to Essen Grugapark when no park has been chosen yet.
 final openingHoursProvider = Provider<List<OpeningHours>>((ref) {
-  final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.EssenGrugapark;
+  final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
   return park.openingHours;
 });

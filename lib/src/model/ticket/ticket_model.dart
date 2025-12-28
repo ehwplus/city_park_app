@@ -14,6 +14,7 @@ class TicketModel {
     this.cardNumber,
     required this.parks,
     this.expirationDate,
+    this.type = TicketType.seasonPass,
   });
 
   factory TicketModel.fromJson(Map<String, dynamic> json) => _$TicketModelFromJson(json);
@@ -34,5 +35,12 @@ class TicketModel {
 
   final List<ParkEnum> parks;
 
+  final TicketType type;
+
   Map<String, dynamic> toJson() => _$TicketModelToJson(this);
+}
+
+enum TicketType {
+  seasonPass,
+  single,
 }

@@ -22,7 +22,7 @@ void main() {
     TicketModel buildTicket({
       required String uuid,
       String? cardNumber,
-      List<ParkEnum> parks = const [ParkEnum.EssenGrugapark],
+      List<ParkEnum> parks = const [ParkEnum.essenGrugapark],
     }) {
       return TicketModel(
         uuid: uuid,
@@ -32,6 +32,7 @@ void main() {
         qrCode: 'qr-$uuid',
         cardNumber: cardNumber,
         parks: parks,
+        type: TicketType.seasonPass,
       );
     }
 

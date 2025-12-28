@@ -1,5 +1,6 @@
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/widget/opening_hours/opening_hours_view_model.dart';
+import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -16,35 +17,28 @@ class OpeningHoursWidget extends ConsumerWidget {
     return viewModelAsync.when(
       data: (vm) {
         final statusText = _buildStatusText(vm, l10n, locale);
-
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (statusText != null) ...[
-              Center(
-                child: Text(
-                  statusText,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ),
+              Center(child: Text(statusText, style: Theme.of(context).textTheme.titleMedium)),
               const SizedBox(height: 16),
             ],
             Center(
-              child: InkWell(
-                onTap: () {
+              child: ElevatedButton(
+                onPressed: () {
                   showBottomSheet(
                     context: context,
                     builder: (context) {
-                      return Material(
-                        child: openingTimesOfNext7Days(vm, locale, l10n),
-                      );
+                      return Material(child: openingTimesOfNext7Days(vm, locale, l10n));
                     },
                   );
                 },
-                child: Text(
-                  l10n.openingHoursNext7Days,
-                  style: Theme.of(context).textTheme.titleMedium,
+                style: FilledButton.styleFrom(
+                  foregroundColor: colorPalette.fontColors.normalInverted,
+                  backgroundColor: colorPalette.fontColors.normal,
                 ),
+                child: Text(l10n.openingHoursNext7Days),
               ),
             ),
           ],
@@ -55,11 +49,7 @@ class OpeningHoursWidget extends ConsumerWidget {
     );
   }
 
-  Widget openingTimesOfNext7Days(
-    OpeningHoursViewModel vm,
-    String locale,
-    AppLocalizations l10n,
-  ) {
+  Widget openingTimesOfNext7Days(OpeningHoursViewModel vm, String locale, AppLocalizations l10n) {
     return Card(
       child: Column(
         children: [
@@ -78,44 +68,24 @@ class OpeningHoursWidget extends ConsumerWidget {
   }
 }
 
-String? _buildStatusText(
-  OpeningHoursViewModel vm,
-  AppLocalizations l10n,
-  String locale,
-) {
+String? _buildStatusText(OpeningHoursViewModel vm, AppLocalizations l10n, String locale) {
   switch (vm.status) {
     case OpeningStatus.openNow:
       if (vm.minutesUntilChange == null || vm.targetTime == null) return null;
-      return l10n.parkStatusClosing(
-        vm.park.name,
-        vm.minutesUntilChange!,
-        _formatTime(vm.targetTime!, locale),
-      );
+      return l10n.parkStatusClosing(vm.park.name, vm.minutesUntilChange!, _formatTime(vm.targetTime!, locale));
     case OpeningStatus.opensToday:
       if (vm.minutesUntilChange == null || vm.targetTime == null) return null;
-      return l10n.parkStatusOpensToday(
-        vm.park.name,
-        vm.minutesUntilChange!,
-        _formatTime(vm.targetTime!, locale),
-      );
+      return l10n.parkStatusOpensToday(vm.park.name, vm.minutesUntilChange!, _formatTime(vm.targetTime!, locale));
     case OpeningStatus.opensFuture:
       if (vm.minutesUntilChange == null || vm.targetTime == null) return null;
       final when = _whenLabel(vm, l10n, locale);
-      return l10n.parkStatusOpensFuture(
-        vm.park.name,
-        when,
-        _formatTime(vm.targetTime!, locale),
-      );
+      return l10n.parkStatusOpensFuture(vm.park.name, when, _formatTime(vm.targetTime!, locale));
     case OpeningStatus.closed:
       return null;
   }
 }
 
-String _whenLabel(
-  OpeningHoursViewModel vm,
-  AppLocalizations l10n,
-  String locale,
-) {
+String _whenLabel(OpeningHoursViewModel vm, AppLocalizations l10n, String locale) {
   if (vm.targetDay == null) return '';
   final now = DateTime.now();
   final baseDay = DateTime(now.year, now.month, now.day);
@@ -127,5 +97,4 @@ String _whenLabel(
   return '$weekday, den $date';
 }
 
-String _formatTime(DateTime date, String locale) =>
-    DateFormat('HH:mm', locale).format(date);
+String _formatTime(DateTime date, String locale) => DateFormat('HH:mm', locale).format(date);

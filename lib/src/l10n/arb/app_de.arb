@@ -71,6 +71,8 @@
   "@settingsImpressumTileSubtitle": {
     "description": "Listeneintrag Impressum Untertitel"
   },
+  "ticketSingle": "Einzelkarte",
+  "ticketSeasonPass": "Dauerkarte",
   "ticketsSeasonPassQuestion": "Du besitzt eine Dauerkarte?",
   "@ticketsSeasonPassQuestion": {
     "description": "Frage wenn keine Dauerkarte gespeichert ist"
@@ -79,7 +81,7 @@
   "@ticketsAddSeasonPassButton": {
     "description": "Buttonbeschriftung zum Hinzufügen einer Dauerkarte"
   },
-  "ticketsAvailableInfo": "Du hast bereits gespeicherte Dauerkarten.",
+  "ticketsAvailableInfo": "Willst du weitere Tickets hinzufügen?",
   "@ticketsAvailableInfo": {
     "description": "Info wenn Dauerkarten vorhanden sind"
   },
@@ -102,6 +104,14 @@
   "ticketsManagementRemove": "Entfernen",
   "@ticketsManagementRemove": {
     "description": "Label für Entfernen-Aktion bei Ticket"
+  },
+  "ticketsBuyTicketButton": "Ticket kaufen",
+  "@ticketsBuyTicketButton": {
+    "description": "Buttonbeschriftung zum Ticketkauf im Browser"
+  },
+  "ticketsOpenShopError": "Ticketshop konnte nicht geöffnet werden.",
+  "@ticketsOpenShopError": {
+    "description": "Fehlermeldung wenn der Ticketshop nicht geöffnet werden konnte"
   },
   "parkStatusClosing": "Der {parkName} schließt in {minutes} Minuten. Der Park ist heute bis {time} Uhr geöffnet.",
   "@parkStatusClosing": {

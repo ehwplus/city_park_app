@@ -124,7 +124,7 @@ _OpeningWindow? _openingWindowForDay(List<OpeningHours> openings, DateTime day) 
 /// Provides an opening hours view model that updates every minute.
 final openingHoursViewModelProvider = StreamProvider<OpeningHoursViewModel>((ref) {
   final openings = ref.watch(openingHoursProvider);
-  final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.EssenGrugapark;
+  final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
 
   Stream<OpeningHoursViewModel> stream() async* {
     yield _buildViewModel(park: park, openings: openings, now: DateTime.now());

@@ -17,10 +17,7 @@ class LastUsedParkNotifier extends Notifier<ParkEnum?> {
     final stored = prefs.getString(_prefsKey);
     if (stored == null) return;
 
-    final park = ParkEnum.values.firstWhere(
-      (element) => element.name == stored,
-      orElse: () => ParkEnum.EssenGrugapark,
-    );
+    final park = ParkEnum.values.firstWhere((element) => element.name == stored, orElse: () => ParkEnum.essenGrugapark);
     state = park;
   }
 
@@ -39,6 +36,4 @@ class LastUsedParkNotifier extends Notifier<ParkEnum?> {
   }
 }
 
-final lastUsedParkProvider = NotifierProvider<LastUsedParkNotifier, ParkEnum?>(
-  LastUsedParkNotifier.new,
-);
+final lastUsedParkProvider = NotifierProvider<LastUsedParkNotifier, ParkEnum?>(LastUsedParkNotifier.new);

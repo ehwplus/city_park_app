@@ -116,10 +116,10 @@ abstract class AppLocalizations {
   /// **'Eintritt'**
   String get tabTickets;
 
-  /// Tab-Titel für Karte
+  /// Tab-Titel für Karte/Entdecken
   ///
   /// In de, this message translates to:
-  /// **'Karte'**
+  /// **'Entdecken'**
   String get tabMap;
 
   /// Tab-Titel für Veranstaltungen
@@ -143,7 +143,7 @@ abstract class AppLocalizations {
   /// Beschreibung Karte
   ///
   /// In de, this message translates to:
-  /// **'Erkunde den Parkplan und entdecke Highlights in der Nähe.'**
+  /// **'Erkunde den Park und entdecke Highlights in der Nähe.'**
   String get tabMapDescription;
 
   /// Beschreibung Veranstaltungen
@@ -206,6 +206,18 @@ abstract class AppLocalizations {
   /// **'Angaben gemäß § 5 TMG'**
   String get settingsImpressumTileSubtitle;
 
+  /// No description provided for @ticketSingle.
+  ///
+  /// In de, this message translates to:
+  /// **'Einzelkarte'**
+  String get ticketSingle;
+
+  /// No description provided for @ticketSeasonPass.
+  ///
+  /// In de, this message translates to:
+  /// **'Dauerkarte'**
+  String get ticketSeasonPass;
+
   /// Frage wenn keine Dauerkarte gespeichert ist
   ///
   /// In de, this message translates to:
@@ -221,7 +233,7 @@ abstract class AppLocalizations {
   /// Info wenn Dauerkarten vorhanden sind
   ///
   /// In de, this message translates to:
-  /// **'Du hast bereits gespeicherte Dauerkarten.'**
+  /// **'Willst du weitere Tickets hinzufügen?'**
   String get ticketsAvailableInfo;
 
   /// Listeneintrag Tickets Titel
@@ -253,6 +265,18 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Entfernen'**
   String get ticketsManagementRemove;
+
+  /// Buttonbeschriftung zum Ticketkauf im Browser
+  ///
+  /// In de, this message translates to:
+  /// **'Ticket kaufen'**
+  String get ticketsBuyTicketButton;
+
+  /// Fehlermeldung wenn der Ticketshop nicht geöffnet werden konnte
+  ///
+  /// In de, this message translates to:
+  /// **'Ticketshop konnte nicht geöffnet werden.'**
+  String get ticketsOpenShopError;
 
   /// Status wenn der Park jetzt geöffnet ist
   ///

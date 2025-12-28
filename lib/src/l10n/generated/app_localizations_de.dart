@@ -18,7 +18,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get tabTickets => 'Eintritt';
 
   @override
-  String get tabMap => 'Karte';
+  String get tabMap => 'Entdecken';
 
   @override
   String get tabEvents => 'Veranstaltungen';
@@ -33,7 +33,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get tabMapDescription =>
-      'Erkunde den Parkplan und entdecke Highlights in der Nähe.';
+      'Erkunde den Park und entdecke Highlights in der Nähe.';
 
   @override
   String get tabEventsDescription =>
@@ -70,14 +70,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsImpressumTileSubtitle => 'Angaben gemäß § 5 TMG';
 
   @override
+  String get ticketSingle => 'Einzelkarte';
+
+  @override
+  String get ticketSeasonPass => 'Dauerkarte';
+
+  @override
   String get ticketsSeasonPassQuestion => 'Du besitzt eine Dauerkarte?';
 
   @override
   String get ticketsAddSeasonPassButton => 'Dauerkarte hinzufügen';
 
   @override
-  String get ticketsAvailableInfo =>
-      'Du hast bereits gespeicherte Dauerkarten.';
+  String get ticketsAvailableInfo => 'Willst du weitere Tickets hinzufügen?';
 
   @override
   String get settingsTicketsTileTitle => 'Tickets';
@@ -95,6 +100,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get ticketsManagementRemove => 'Entfernen';
+
+  @override
+  String get ticketsBuyTicketButton => 'Ticket kaufen';
+
+  @override
+  String get ticketsOpenShopError => 'Ticketshop konnte nicht geöffnet werden.';
 
   @override
   String parkStatusClosing(String parkName, int minutes, String time) {
