@@ -212,17 +212,29 @@ abstract class AppLocalizations {
   /// **'Dauerkarte'**
   String get ticketSeasonPass;
 
+  /// No description provided for @ticketsSelectCardType.
+  ///
+  /// In de, this message translates to:
+  /// **'Wähle den gewünschten Ticket-Typ'**
+  String get ticketsSelectCardType;
+
   /// Frage wenn keine Dauerkarte gespeichert ist
   ///
   /// In de, this message translates to:
   /// **'Du besitzt eine Dauerkarte?'**
   String get ticketsSeasonPassQuestion;
 
-  /// Buttonbeschriftung zum Hinzufügen einer Dauerkarte
+  /// No description provided for @ticketsAddSeasonPassButton.
   ///
   /// In de, this message translates to:
   /// **'Dauerkarte hinzufügen'**
   String get ticketsAddSeasonPassButton;
+
+  /// Buttonbeschriftung zum Hinzufügen einer Karte
+  ///
+  /// In de, this message translates to:
+  /// **'Karte hinzufügen'**
+  String get ticketsAddTicketButton;
 
   /// Info wenn Dauerkarten vorhanden sind
   ///
@@ -395,8 +407,8 @@ abstract class AppLocalizations {
   /// Fehlermeldung für ungültiges Geburtsdatum
   ///
   /// In de, this message translates to:
-  /// **'Geburtsdatum muss YYYY-MM-DD sein'**
-  String get ticketsFormInvalidBirthday;
+  /// **'Datum muss YYYY-MM-DD sein'**
+  String get ticketsFormInvalidDate;
 
   /// Formularfeld Kartennummer
   ///
@@ -407,14 +419,26 @@ abstract class AppLocalizations {
   /// Formularfeld QR-Code
   ///
   /// In de, this message translates to:
-  /// **'QR-Code / Seriennummer'**
+  /// **'Bar-Code'**
+  String get ticketsFormBarCode;
+
+  /// Formularfeld QR-Code
+  ///
+  /// In de, this message translates to:
+  /// **'QR-Code'**
   String get ticketsFormQrCode;
 
-  /// Button zum Scannen des QR-Codes
+  /// Button zum Scannen des Bar-Codes
+  ///
+  /// In de, this message translates to:
+  /// **'Bar-Code scannen'**
+  String get ticketsFormScanBarCodeButton;
+
+  /// No description provided for @ticketsFormScanQRCodeButton.
   ///
   /// In de, this message translates to:
   /// **'QR-Code scannen'**
-  String get ticketsFormScanButton;
+  String get ticketsFormScanQRCodeButton;
 
   /// Label für Parkauswahl
   ///

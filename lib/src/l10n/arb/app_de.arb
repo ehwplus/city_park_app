@@ -69,13 +69,15 @@
   },
   "ticketSingle": "Einzelkarte",
   "ticketSeasonPass": "Dauerkarte",
+  "ticketsSelectCardType": "Wähle den gewünschten Ticket-Typ",
   "ticketsSeasonPassQuestion": "Du besitzt eine Dauerkarte?",
   "@ticketsSeasonPassQuestion": {
     "description": "Frage wenn keine Dauerkarte gespeichert ist"
   },
   "ticketsAddSeasonPassButton": "Dauerkarte hinzufügen",
-  "@ticketsAddSeasonPassButton": {
-    "description": "Buttonbeschriftung zum Hinzufügen einer Dauerkarte"
+  "ticketsAddTicketButton": "Karte hinzufügen",
+  "@ticketsAddTicketButton": {
+    "description": "Buttonbeschriftung zum Hinzufügen einer Karte"
   },
   "ticketsAvailableInfo": "Willst du weitere Tickets hinzufügen?",
   "@ticketsAvailableInfo": {
@@ -222,20 +224,28 @@
   "@ticketsFormBirthday": {
     "description": "Formularfeld Geburtsdatum"
   },
-  "ticketsFormInvalidBirthday": "Geburtsdatum muss YYYY-MM-DD sein",
-  "@ticketsFormInvalidBirthday": {
+  "ticketsFormInvalidDate": "Datum muss YYYY-MM-DD sein",
+  "@ticketsFormInvalidDate": {
     "description": "Fehlermeldung für ungültiges Geburtsdatum"
   },
   "ticketsFormCardNumber": "Kartennummer",
   "@ticketsFormCardNumber": {
     "description": "Formularfeld Kartennummer"
   },
-  "ticketsFormQrCode": "QR-Code / Seriennummer",
+  "ticketsFormBarCode": "Bar-Code",
+  "@ticketsFormBarCode": {
+    "description": "Formularfeld QR-Code"
+  },
+  "ticketsFormQrCode": "QR-Code",
   "@ticketsFormQrCode": {
     "description": "Formularfeld QR-Code"
   },
-  "ticketsFormScanButton": "QR-Code scannen",
-  "@ticketsFormScanButton": {
+  "ticketsFormScanBarCodeButton": "Bar-Code scannen",
+  "@ticketsFormScanBarCodeButton": {
+    "description": "Button zum Scannen des Bar-Codes"
+  },
+  "ticketsFormScanQRCodeButton": "QR-Code scannen",
+  "@ticketsFormScanQrCodeButton": {
     "description": "Button zum Scannen des QR-Codes"
   },
   "ticketsFormParksLabel": "Gültig in Parks",

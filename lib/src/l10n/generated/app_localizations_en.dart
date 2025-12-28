@@ -73,10 +73,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ticketSeasonPass => 'Season pass';
 
   @override
+  String get ticketsSelectCardType => 'Please choose the ticket type';
+
+  @override
   String get ticketsSeasonPassQuestion => 'Do you have a season pass?';
 
   @override
   String get ticketsAddSeasonPassButton => 'Add season pass';
+
+  @override
+  String get ticketsAddTicketButton => 'Add ticket';
 
   @override
   String get ticketsAvailableInfo => 'Would you like to add more tickets?';
@@ -170,16 +176,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ticketsFormBirthday => 'Birthday (YYYY-MM-DD)';
 
   @override
-  String get ticketsFormInvalidBirthday => 'Birthday must be YYYY-MM-DD';
+  String get ticketsFormInvalidDate => 'Datum muss YYYY-MM-DD sein';
 
   @override
   String get ticketsFormCardNumber => 'Card number';
 
   @override
-  String get ticketsFormQrCode => 'QR code / serial number';
+  String get ticketsFormBarCode => 'Bar code';
 
   @override
-  String get ticketsFormScanButton => 'Scan QR code';
+  String get ticketsFormQrCode => 'QR code';
+
+  @override
+  String get ticketsFormScanBarCodeButton => 'Scan bar code';
+
+  @override
+  String get ticketsFormScanQRCodeButton => 'QR-Code scannen';
 
   @override
   String get ticketsFormParksLabel => 'Valid in parks';

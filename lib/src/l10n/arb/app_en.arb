@@ -69,13 +69,15 @@
   },
   "ticketSingle": "Single ticket",
   "ticketSeasonPass": "Season pass",
+  "ticketsSelectCardType": "Please choose the ticket type",
   "ticketsSeasonPassQuestion": "Do you have a season pass?",
   "@ticketsSeasonPassQuestion": {
     "description": "Prompt shown when no ticket is stored"
   },
   "ticketsAddSeasonPassButton": "Add season pass",
-  "@ticketsAddSeasonPassButton": {
-    "description": "Button label to add a season pass"
+  "ticketsAddTicketButton": "Add ticket",
+  "@ticketsAddTicketButton": {
+    "description": "Button label to add a ticket"
   },
   "ticketsAvailableInfo": "Would you like to add more tickets?",
   "@ticketsAvailableInfo": {
@@ -230,9 +232,17 @@
   "@ticketsFormCardNumber": {
     "description": "Form field card number"
   },
-  "ticketsFormQrCode": "QR code / serial number",
+  "ticketsFormBarCode": "Bar code",
+  "@ticketsFormBarCode": {
+    "description": "Form field bar code"
+  },
+  "ticketsFormQrCode": "QR code",
   "@ticketsFormQrCode": {
     "description": "Form field QR code"
+  },
+  "ticketsFormScanBarCodeButton": "Scan bar code",
+  "@ticketsFormScanBarCodeButton": {
+    "description": "Button to scan Bar code"
   },
   "ticketsFormScanButton": "Scan QR code",
   "@ticketsFormScanButton": {

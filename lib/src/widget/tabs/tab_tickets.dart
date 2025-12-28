@@ -13,20 +13,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TicketsTabContent extends ConsumerWidget {
-  const TicketsTabContent({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.buttonLabel,
-    required this.questionText,
-    required this.ticketsAvailableText,
-    required this.onAddPressed,
-  });
+  const TicketsTabContent({super.key, required this.ticketsAvailableText, required this.onAddPressed});
 
-  final String title;
-  final String description;
-  final String buttonLabel;
-  final String questionText;
   final String ticketsAvailableText;
   final VoidCallback onAddPressed;
 
@@ -83,9 +71,14 @@ class TicketsTabContent extends ConsumerWidget {
     final name =
         [ticket.firstName, ticket.lastName].where((value) => value != null && value.isNotEmpty).join(' ').trim();
     final displayName = name.isEmpty ? ticket.uuid : name;
+    final showParkName = ticket.type != TicketType.ruhrTopCard;
     final subtitle = <String>[
-      park.name,
-      ticket.type == TicketType.seasonPass ? context.l10n.ticketSeasonPass : context.l10n.ticketSingle,
+      if (showParkName) park.name,
+      ticket.type == TicketType.seasonPass
+          ? context.l10n.ticketSeasonPass
+          : ticket.type == TicketType.ruhrTopCard
+          ? 'Ruhr.Topcard'
+          : context.l10n.ticketSingle,
       if (ticket.cardNumber != null && ticket.cardNumber!.isNotEmpty) ticket.cardNumber!,
     ].join(' · ');
 

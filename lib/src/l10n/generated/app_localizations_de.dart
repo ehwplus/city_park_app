@@ -72,10 +72,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get ticketSeasonPass => 'Dauerkarte';
 
   @override
+  String get ticketsSelectCardType => 'Wähle den gewünschten Ticket-Typ';
+
+  @override
   String get ticketsSeasonPassQuestion => 'Du besitzt eine Dauerkarte?';
 
   @override
   String get ticketsAddSeasonPassButton => 'Dauerkarte hinzufügen';
+
+  @override
+  String get ticketsAddTicketButton => 'Karte hinzufügen';
 
   @override
   String get ticketsAvailableInfo => 'Willst du weitere Tickets hinzufügen?';
@@ -170,16 +176,22 @@ class AppLocalizationsDe extends AppLocalizations {
   String get ticketsFormBirthday => 'Geburtsdatum (YYYY-MM-DD)';
 
   @override
-  String get ticketsFormInvalidBirthday => 'Geburtsdatum muss YYYY-MM-DD sein';
+  String get ticketsFormInvalidDate => 'Datum muss YYYY-MM-DD sein';
 
   @override
   String get ticketsFormCardNumber => 'Kartennummer';
 
   @override
-  String get ticketsFormQrCode => 'QR-Code / Seriennummer';
+  String get ticketsFormBarCode => 'Bar-Code';
 
   @override
-  String get ticketsFormScanButton => 'QR-Code scannen';
+  String get ticketsFormQrCode => 'QR-Code';
+
+  @override
+  String get ticketsFormScanBarCodeButton => 'Bar-Code scannen';
+
+  @override
+  String get ticketsFormScanQRCodeButton => 'QR-Code scannen';
 
   @override
   String get ticketsFormParksLabel => 'Gültig in Parks';

@@ -38,10 +38,6 @@ class _HomePageState extends ConsumerState<HomePage> {
       if (FeatureFlags.tabArrivalEnabled)
         TabContent(title: l10n.tabArrival, description: l10n.tabArrivalDescription, icon: Icons.directions),
       TicketsTabContent(
-        title: l10n.tabTickets,
-        description: l10n.tabTicketsDescription,
-        buttonLabel: l10n.ticketsAddSeasonPassButton,
-        questionText: l10n.ticketsSeasonPassQuestion,
         ticketsAvailableText: l10n.ticketsAvailableInfo,
         onAddPressed: () => Navigator.of(context).pushNamed(TicketManagementPage.routeName),
       ),

@@ -66,43 +66,11 @@ class TicketStore extends Notifier<List<TicketModel>> {
 }
 
 Map<String, dynamic> _ticketToMap(TicketModel ticket) {
-  return {
-    'uuid': ticket.uuid,
-    'firstName': ticket.firstName,
-    'lastName': ticket.lastName,
-    'birthday': ticket.birthday?.toIso8601String(),
-    'qrCode': ticket.qrCode,
-    'cardNumber': ticket.cardNumber,
-    'parks': ticket.parks.map((park) => park.name).toList(),
-  };
+  return ticket.toJson();
 }
 
 TicketModel _ticketFromMap(Map<String, dynamic> json) {
-  final parks =
-      (json['parks'] as List<dynamic>? ?? [])
-          .map((park) => park.toString())
-          .map(
-            (parkName) =>
-                ParkEnum.values.firstWhere((park) => park.name == parkName, orElse: () => ParkEnum.essenGrugapark),
-          )
-          .toList();
-
-  DateTime? birthday;
-  final birthdayRaw = json['birthday'];
-  if (birthdayRaw is String && birthdayRaw.isNotEmpty) {
-    birthday = DateTime.tryParse(birthdayRaw);
-  }
-
-  return TicketModel(
-    uuid: json['uuid'] as String,
-    firstName: json['firstName'] as String?,
-    lastName: json['lastName'] as String?,
-    birthday: birthday,
-    qrCode: json['qrCode'] as String?,
-    cardNumber: json['cardNumber'] as String?,
-    parks: parks,
-    type: TicketType.seasonPass,
-  );
+  return TicketModel.fromJson(json);
 }
 
 final ticketStoreProvider = NotifierProvider<TicketStore, List<TicketModel>>(TicketStore.new);

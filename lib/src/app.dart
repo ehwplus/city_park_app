@@ -23,24 +23,16 @@ class CityParkApp extends StatelessWidget {
     return StatefulWidgetWithUiConfig(
       uiConfig: UiConfig(
         appName: 'Stadtpark',
-        defaultColorPalette: ColorPalette.fromMaterialColor(
-          primary: Colors.red,
-        ),
+        defaultColorPalette: ColorPalette.fromMaterialColor(primary: Colors.red),
       ),
-      uiConfigManager: SharedPreferencesUiConfigManager(
-        sharedPreferences: sharedPreferences,
-      ),
+      uiConfigManager: SharedPreferencesUiConfigManager(sharedPreferences: sharedPreferences),
       builder: ({
         String? alternativeColorPaletteKey,
         required ThemeMode themeMode,
         required bool isHighContrastEnabled,
       }) {
-        final themeLight = uiConfig.lightTheme(
-          alternativeMode: alternativeColorPaletteKey,
-        );
-        final themeDark = uiConfig.darkTheme(
-          alternativeMode: alternativeColorPaletteKey,
-        );
+        final themeLight = uiConfig.lightTheme(alternativeMode: alternativeColorPaletteKey);
+        final themeDark = uiConfig.darkTheme(alternativeMode: alternativeColorPaletteKey);
 
         return Consumer(
           builder: (context, ref, _) {
@@ -58,9 +50,7 @@ class CityParkApp extends StatelessWidget {
               //
               // The appTitle is defined in .arb files found in the localization
               // directory.
-              onGenerateTitle:
-                  (BuildContext context) =>
-                      AppLocalizations.of(context)!.appTitle,
+              onGenerateTitle: (BuildContext context) => AppLocalizations.of(context)!.appTitle,
 
               theme: themeLight,
               darkTheme: themeDark,
@@ -70,16 +60,23 @@ class CityParkApp extends StatelessWidget {
                 SettingsPage.routeName: (_) => const SettingsPage(),
                 PrivacyPage.routeName: (_) => const PrivacyPage(),
                 ImpressumPage.routeName: (_) => const ImpressumPage(),
-                TicketManagementPage.routeName:
-                    (_) => const TicketManagementPage(),
+                TicketManagementPage.routeName: (_) => const TicketManagementPage(),
               },
               onGenerateRoute: (settings) {
                 if (settings.name == AddTicketPage.routeName) {
+                  final args = settings.arguments;
+                  final existing = args is TicketModel ? args : null;
+                  return MaterialPageRoute(
+                    builder: (_) => AddTicketPage(existing: existing, preselectedTicketType: existing?.type),
+                    settings: settings,
+                  );
+                } else if (settings.name == AddTicketPage.routeNameRuhrTopCard) {
                   final args = settings.arguments;
                   return MaterialPageRoute(
                     builder:
                         (_) => AddTicketPage(
                           existing: args is TicketModel ? args : null,
+                          preselectedTicketType: TicketType.ruhrTopCard,
                         ),
                     settings: settings,
                   );
