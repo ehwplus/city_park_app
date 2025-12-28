@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MapTab extends ConsumerWidget {
-  const MapTab({super.key, required this.title, required this.description});
+class ExploreTab extends ConsumerWidget {
+  const ExploreTab({super.key, required this.title, required this.description});
 
   final String title;
   final String description;

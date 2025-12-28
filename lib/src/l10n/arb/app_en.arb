@@ -11,9 +11,9 @@
   "@tabTickets": {
     "description": "Tab title for entrance tickets"
   },
-  "tabMap": "Map",
+  "tabMap": "Expore",
   "@tabMap": {
-    "description": "Tab title for map"
+    "description": "Tab title for map/explore"
   },
   "tabEvents": "Events",
   "@tabEvents": {
@@ -27,7 +27,7 @@
   "@tabTicketsDescription": {
     "description": "Description for tickets tab"
   },
-  "tabMapDescription": "Explore the park map and discover highlights nearby.",
+  "tabMapDescription": "Explore the park and discover highlights nearby.",
   "@tabMapDescription": {
     "description": "Description for map tab"
   },

@@ -36,7 +36,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         ticketsAvailableText: l10n.ticketsAvailableInfo,
         onAddPressed: () => Navigator.of(context).pushNamed(TicketManagementPage.routeName),
       ),
-      MapTab(title: l10n.tabMap, description: l10n.tabMapDescription),
+      ExploreTab(title: l10n.tabMap, description: l10n.tabMapDescription),
       TabContent(title: l10n.tabEvents, description: l10n.tabEventsDescription, icon: Icons.event),
     ];
 

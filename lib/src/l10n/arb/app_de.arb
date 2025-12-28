@@ -11,9 +11,9 @@
   "@tabTickets": {
     "description": "Tab-Titel für Eintritt"
   },
-  "tabMap": "Karte",
+  "tabMap": "Entdecken",
   "@tabMap": {
-    "description": "Tab-Titel für Karte"
+    "description": "Tab-Titel für Karte/Entdecken"
   },
   "tabEvents": "Veranstaltungen",
   "@tabEvents": {
@@ -27,7 +27,7 @@
   "@tabTicketsDescription": {
     "description": "Beschreibung Eintritt"
   },
-  "tabMapDescription": "Erkunde den Parkplan und entdecke Highlights in der Nähe.",
+  "tabMapDescription": "Erkunde den Park und entdecke Highlights in der Nähe.",
   "@tabMapDescription": {
     "description": "Beschreibung Karte"
   },
