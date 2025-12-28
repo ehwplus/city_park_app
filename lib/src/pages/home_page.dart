@@ -33,6 +33,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
     final tabs = [
       if (FeatureFlags.tabArrivalEnabled)
         TabContent(title: l10n.tabArrival, description: l10n.tabArrivalDescription, icon: Icons.directions),
@@ -45,17 +46,16 @@ class _HomePageState extends ConsumerState<HomePage> {
         onAddPressed: () => Navigator.of(context).pushNamed(TicketManagementPage.routeName),
       ),
       ExploreTab(title: l10n.tabMap, description: l10n.tabMapDescription),
-      const EventsTab(),
+      if (park.eventsUrl != null) const EventsTab(),
     ];
 
     final tabTitles = [
       if (FeatureFlags.tabArrivalEnabled) l10n.tabArrival,
       l10n.tabTickets,
       l10n.tabMap,
-      l10n.tabEvents,
+      if (park.eventsUrl != null) l10n.tabEvents,
     ];
 
-    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 56,
@@ -79,7 +79,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             BottomNavigationBarItem(icon: const Icon(Icons.directions), label: l10n.tabArrival),
           BottomNavigationBarItem(icon: const Icon(Icons.confirmation_number), label: l10n.tabTickets),
           BottomNavigationBarItem(icon: const Icon(Icons.map), label: l10n.tabMap),
-          BottomNavigationBarItem(icon: const Icon(Icons.event), label: l10n.tabEvents),
+          if (park.eventsUrl != null) BottomNavigationBarItem(icon: const Icon(Icons.event), label: l10n.tabEvents),
         ],
         type: BottomNavigationBarType.fixed,
       ),

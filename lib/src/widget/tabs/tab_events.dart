@@ -18,9 +18,10 @@ class _EventsTabState extends ConsumerState<EventsTab> {
   @override
   void initState() {
     super.initState();
-    _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(Colors.transparent);
+    _controller =
+        WebViewController()
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..setBackgroundColor(Colors.transparent);
   }
 
   @override
@@ -29,7 +30,7 @@ class _EventsTabState extends ConsumerState<EventsTab> {
 
     if (_currentPark != park) {
       _currentPark = park;
-      _controller.loadRequest(Uri.parse(park.eventsUrl));
+      _controller.loadRequest(Uri.parse(park.eventsUrl!));
     }
 
     return SafeArea(child: WebViewWidget(controller: _controller));

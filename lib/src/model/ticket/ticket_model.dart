@@ -11,6 +11,7 @@ class TicketModel {
     required this.lastName,
     this.birthday,
     required this.qrCode,
+    this.barCode,
     this.cardNumber,
     required this.parks,
     this.expirationDate,
@@ -27,6 +28,8 @@ class TicketModel {
 
   final String? qrCode;
 
+  final String? barCode;
+
   final DateTime? birthday;
 
   final DateTime? expirationDate;
@@ -40,7 +43,4 @@ class TicketModel {
   Map<String, dynamic> toJson() => _$TicketModelToJson(this);
 }
 
-enum TicketType {
-  seasonPass,
-  single,
-}
+enum TicketType { seasonPass, single, ruhrTopCard }

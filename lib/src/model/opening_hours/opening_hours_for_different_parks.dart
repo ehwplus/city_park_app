@@ -9,6 +9,29 @@ final openingHoursWestfalenpark = [
   ),
 ];
 
+final openingHoursDortmundZoo = [
+  OpeningHours(
+    season: Season(start: Date(month: 11, day: 1), end: Date(month: 2, day: 29)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 9, endHour: 16, endMinute: 30),
+  ),
+  OpeningHours(
+    season: Season(start: Date(month: 3, day: 1), end: Date(month: 3, day: 31)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 9, endHour: 17, endMinute: 30),
+  ),
+  OpeningHours(
+    season: Season(start: Date(month: 10, day: 1), end: Date(month: 10, day: 31)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 9, endHour: 17, endMinute: 30),
+  ),
+  OpeningHours(
+    season: Season(start: Date(month: 4, day: 1), end: Date(month: 9, day: 30)),
+    openingTimeType: OpeningTimeType.dailyTicket,
+    openingTime: TimeRange(startHour: 9, endHour: 18, endMinute: 30),
+  ),
+];
+
 final openingHoursGrugapark = [
   OpeningHours(
     season: Season(start: Date(month: 1, day: 1), end: Date(month: 12, day: 30)),

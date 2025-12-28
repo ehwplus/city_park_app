@@ -16,6 +16,12 @@ enum ParkEnum {
     buyTicketUrl: 'https://shop.ticketpay.de/organizer/TTGU9J70/calendar',
     eventsUrl: 'https://www.dortmund.de/dortmund-erleben/freizeit-und-kultur/westfalenpark/die-veranstaltungen/',
   ),
+  dortmundZoo(
+    name: 'Zoo Dortmund',
+    city: 'Dortmund',
+    assetFolder: 'dortmund_zoo',
+    buyTicketUrl: 'https://shop.ticketpay.de/organizer/XNA9EXCS/calendar',
+  ),
   mannheimLuisenpark(
     name: 'Luisenpark',
     city: 'Mannheim',
@@ -36,7 +42,7 @@ enum ParkEnum {
     required this.city,
     required this.assetFolder,
     required this.buyTicketUrl,
-    required this.eventsUrl,
+    this.eventsUrl,
   });
 
   final String name;
@@ -45,7 +51,7 @@ enum ParkEnum {
 
   final String buyTicketUrl;
 
-  final String eventsUrl;
+  final String? eventsUrl;
 
   final String assetFolder;
 
@@ -63,6 +69,8 @@ extension OpeningHoursExtension on ParkEnum {
         return openingHoursHerzogenriedpark;
       case ParkEnum.dortmundWestfalenpark:
         return openingHoursWestfalenpark;
+      case ParkEnum.dortmundZoo:
+        return openingHoursDortmundZoo;
     }
   }
 }
