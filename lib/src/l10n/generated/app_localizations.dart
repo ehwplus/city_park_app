@@ -146,12 +146,6 @@ abstract class AppLocalizations {
   /// **'Erkunde den Park und entdecke Highlights in der Nähe.'**
   String get tabMapDescription;
 
-  /// Beschreibung Veranstaltungen
-  ///
-  /// In de, this message translates to:
-  /// **'Aktuelle Events, Führungen und Termine im Park.'**
-  String get tabEventsDescription;
-
   /// Titel Einstellungen
   ///
   /// In de, this message translates to:

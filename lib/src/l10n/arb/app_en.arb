@@ -31,10 +31,6 @@
   "@tabMapDescription": {
     "description": "Description for map tab"
   },
-  "tabEventsDescription": "Current events, guided tours, and dates in the park.",
-  "@tabEventsDescription": {
-    "description": "Description for events tab"
-  },
   "settingsTitle": "Settings",
   "@settingsTitle": {
     "description": "Settings page title"

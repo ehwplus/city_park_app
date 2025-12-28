@@ -31,10 +31,6 @@
   "@tabMapDescription": {
     "description": "Beschreibung Karte"
   },
-  "tabEventsDescription": "Aktuelle Events, Führungen und Termine im Park.",
-  "@tabEventsDescription": {
-    "description": "Beschreibung Veranstaltungen"
-  },
   "settingsTitle": "Einstellungen",
   "@settingsTitle": {
     "description": "Titel Einstellungen"

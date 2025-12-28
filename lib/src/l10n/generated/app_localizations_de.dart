@@ -36,10 +36,6 @@ class AppLocalizationsDe extends AppLocalizations {
       'Erkunde den Park und entdecke Highlights in der Nähe.';
 
   @override
-  String get tabEventsDescription =>
-      'Aktuelle Events, Führungen und Termine im Park.';
-
-  @override
   String get settingsTitle => 'Einstellungen';
 
   @override

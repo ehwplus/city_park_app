@@ -21,8 +21,6 @@ class ExploreTab extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(title, style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 8),
           Text(description, style: theme.textTheme.bodyMedium),
           const SizedBox(height: 16),
           Expanded(

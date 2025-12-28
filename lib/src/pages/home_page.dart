@@ -1,12 +1,18 @@
 import 'package:city_park_app/src/feature_flags.dart';
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
+import 'package:city_park_app/src/model/park/last_used_park_provider.dart';
+import 'package:city_park_app/src/model/park/park_enum.dart';
 import 'package:city_park_app/src/pages/settings_page.dart';
 import 'package:city_park_app/src/pages/ticket_management_page.dart';
 import 'package:city_park_app/src/widget/tabs/tab.dart';
+import 'package:city_park_app/src/widget/tabs/tab_events.dart';
 import 'package:city_park_app/src/widget/tabs/tab_map.dart';
 import 'package:city_park_app/src/widget/tabs/tab_tickets.dart';
+import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -39,7 +45,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         onAddPressed: () => Navigator.of(context).pushNamed(TicketManagementPage.routeName),
       ),
       ExploreTab(title: l10n.tabMap, description: l10n.tabMapDescription),
-      TabContent(title: l10n.tabEvents, description: l10n.tabEventsDescription, icon: Icons.event),
+      const EventsTab(),
     ];
 
     final tabTitles = [
@@ -49,9 +55,14 @@ class _HomePageState extends ConsumerState<HomePage> {
       l10n.tabEvents,
     ];
 
+    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: 56,
+        leading: Padding(padding: const EdgeInsets.only(left: 16), child: SvgPicture.asset(park.assetPath)),
         title: Text(tabTitles[_currentIndex]),
+        backgroundColor: Colors.transparent,
+        systemOverlayStyle: context.isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
