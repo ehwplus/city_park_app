@@ -8,6 +8,7 @@ enum ParkEnum {
     assetFolder: 'essen_grugapark',
     buyTicketUrl: 'https://pretix.eu/grugapark/eintrittskarten/',
     eventsUrl: 'https://www.grugapark.de/erleben/veranstaltungskalender_2/veranstaltungskalender.de.html',
+    primaryColor: 0xFFE30613,
   ),
   dortmundWestfalenpark(
     name: 'Westfalenpark',
@@ -15,12 +16,14 @@ enum ParkEnum {
     assetFolder: 'dortmund_westfalenpark',
     buyTicketUrl: 'https://shop.ticketpay.de/organizer/TTGU9J70/calendar',
     eventsUrl: 'https://www.dortmund.de/dortmund-erleben/freizeit-und-kultur/westfalenpark/die-veranstaltungen/',
+    primaryColor: 0xFF2D4C9A,
   ),
   dortmundZoo(
     name: 'Zoo Dortmund',
     city: 'Dortmund',
     assetFolder: 'dortmund_zoo',
     buyTicketUrl: 'https://shop.ticketpay.de/organizer/XNA9EXCS/calendar',
+    primaryColor: 0xFF2D4C9A,
   ),
   mannheimLuisenpark(
     name: 'Luisenpark',
@@ -28,6 +31,7 @@ enum ParkEnum {
     assetFolder: 'mannheim_luisenpark',
     buyTicketUrl: 'https://shop.luisenpark.de/',
     eventsUrl: 'https://www.luisenpark.de/veranstaltungen/kalender',
+    primaryColor: 0xFFA3AA1F,
   ),
   mannheimHerzogenriedpark(
     name: 'Herzogenriedpark',
@@ -35,6 +39,7 @@ enum ParkEnum {
     assetFolder: 'mannheim_herzogenriedpark',
     buyTicketUrl: 'https://shop.herzogenriedpark.de/',
     eventsUrl: 'https://www.herzogenriedpark.de/veranstaltungen/kalender',
+    primaryColor: 0xFF005C98,
   );
 
   const ParkEnum({
@@ -43,11 +48,14 @@ enum ParkEnum {
     required this.assetFolder,
     required this.buyTicketUrl,
     this.eventsUrl,
+    required this.primaryColor,
   });
 
   final String name;
 
   final String city;
+
+  final int primaryColor;
 
   final String buyTicketUrl;
 

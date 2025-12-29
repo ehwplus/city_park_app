@@ -8,6 +8,8 @@ import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
 import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:city_park_app/src/widget/opening_hours/opening_hours_widget.dart';
 import 'package:city_park_app/src/widget/tabs/tab.dart';
+import 'package:city_park_app/src/widget/ticket/resolve_background_color.dart';
+import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,8 +34,9 @@ class TicketsTabContent extends ConsumerWidget {
     final parkTickets = !hasTickets ? [] : tickets.where((ticket) => ticket.parks.contains(park)).toList();
 
     final List<CardModel> cards = [
-      if (parkTickets.isNotEmpty) ...parkTickets.map((ticket) => _buildTicketCard(context, ticket, park)),
-      _buildActionCard(context, park, hasTickets: parkTickets.isNotEmpty),
+      if (parkTickets.isNotEmpty)
+        ...parkTickets.map((ticket) => _buildTicketCardWidget(context: context, ticket: ticket, park: park)),
+      _buildAddTicketsWidget(context, park, hasTickets: parkTickets.isNotEmpty),
     ];
     final stackHeight = _calculateStackHeight(cards.length);
 
@@ -54,19 +57,24 @@ class TicketsTabContent extends ConsumerWidget {
             alignment: Alignment.topCenter,
           ),
         ),
-        const SizedBox(height: 32),
+        const SizedBox(height: 16),
         Padding(padding: const EdgeInsets.symmetric(horizontal: 16), child: OpeningHoursWidget()),
       ],
     );
   }
 
   double _calculateStackHeight(int cardCount) {
-    const double baseHeight = _ticketCardHeight + 30 * 2;
+    const double baseHeight = _ticketCardHeight + 34 * 2;
     final double extraSpacing = cardCount > 1 ? (cardCount - 1) * _cardStackSpacing : 0;
     return baseHeight + extraSpacing;
   }
 
-  CardModel _buildTicketCard(BuildContext context, TicketModel ticket, ParkEnum park) {
+  /// Create view model for [CardStackWidget].
+  CardModel _buildTicketCardWidget({
+    required BuildContext context,
+    required TicketModel ticket,
+    required ParkEnum park,
+  }) {
     final theme = Theme.of(context);
     final name =
         [ticket.firstName, ticket.lastName].where((value) => value != null && value.isNotEmpty).join(' ').trim();
@@ -84,7 +92,7 @@ class TicketsTabContent extends ConsumerWidget {
 
     return CardModel(
       key: ValueKey(ticket.uuid),
-      backgroundColor: Colors.amber,
+      backgroundColor: resolveTicketBackgroundColor(park: park, ticket: ticket),
       shadowColor: theme.colorScheme.shadow.withOpacity(0.2),
       shadowBlurRadius: 8,
       radius: const Radius.circular(18),
@@ -104,16 +112,16 @@ class TicketsTabContent extends ConsumerWidget {
                     children: [
                       Text(
                         displayName,
-                        style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                        style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700, color: Colors.white),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 4),
-                      Text(subtitle, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                      Text(subtitle, style: theme.textTheme.bodyMedium?.copyWith(color: Color(0xFFDDDDDD))),
                     ],
                   ),
                 ),
-                Icon(Icons.confirmation_number, color: theme.colorScheme.primary),
+                Icon(Icons.confirmation_number, color: Color(0xFFDDDDDD)),
               ],
             ),
             const SizedBox(height: 16),
@@ -141,7 +149,7 @@ class TicketsTabContent extends ConsumerWidget {
     );
   }
 
-  CardModel _buildActionCard(BuildContext context, ParkEnum park, {required bool hasTickets}) {
+  CardModel _buildAddTicketsWidget(BuildContext context, ParkEnum park, {required bool hasTickets}) {
     final theme = Theme.of(context);
     final scaffoldMessenger = ScaffoldMessenger.maybeOf(context);
     final l10n = context.l10n;
@@ -157,7 +165,7 @@ class TicketsTabContent extends ConsumerWidget {
 
     return CardModel(
       key: const ValueKey('ticket-actions'),
-      backgroundColor: theme.colorScheme.primaryContainer,
+      backgroundColor: Color(0xFF555555),
       shadowColor: theme.colorScheme.primary.withOpacity(0.2),
       shadowBlurRadius: 8,
       radius: const Radius.circular(18),
@@ -170,7 +178,7 @@ class TicketsTabContent extends ConsumerWidget {
           children: [
             Text(
               hasTickets ? context.l10n.ticketsAvailableInfo : context.l10n.ticketsSeasonPassQuestion,
-              style: theme.textTheme.titleLarge?.copyWith(color: onPrimary, fontWeight: FontWeight.w700),
+              style: theme.textTheme.titleLarge?.copyWith(color: Colors.white, fontWeight: FontWeight.w700),
             ),
             const Spacer(),
             ElevatedButton.icon(
