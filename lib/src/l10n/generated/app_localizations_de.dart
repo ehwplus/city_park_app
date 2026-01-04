@@ -9,7 +9,7 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get appTitle => 'Stadtpark App';
+  String get appTitle => 'Mein Park';
 
   @override
   String get tabArrival => 'Anfahrt';

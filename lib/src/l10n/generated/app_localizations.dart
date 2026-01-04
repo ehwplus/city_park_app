@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// App für euren Stadtpark
   ///
   /// In de, this message translates to:
-  /// **'Stadtpark App'**
+  /// **'Mein Park'**
   String get appTitle;
 
   /// Tab-Titel für Anfahrt
