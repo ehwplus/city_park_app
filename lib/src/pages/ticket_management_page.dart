@@ -1,5 +1,6 @@
 import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/l10n/l10n.dart';
+import 'package:city_park_app/src/model/ticket/ticket_model.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
 import 'package:city_park_app/src/pages/add_ticket_page.dart';
 import 'package:city_park_app/src/widget/show_selection_bottom_sheet.dart';
@@ -56,16 +57,22 @@ class TicketManagementPage extends ConsumerWidget {
                     title: Text(name.isEmpty ? ticket.uuid : name),
                     subtitle: subtitle.isNotEmpty ? Text(subtitle) : null,
                     trailing: TextButton(
-                      onPressed: () async => notifier.removeById(ticket.uuid),
+                      onPressed: () async => _onRemoveTicket(ticketStore: notifier, ticketUuid: ticket.uuid),
                       child: Text(l10n.ticketsManagementRemove),
                     ),
-                    onTap: () {
-                      Navigator.of(context).pushNamed(AddTicketPage.routeName, arguments: ticket);
-                    },
+                    onTap: () => _onOpenTicket(context: context, ticket: ticket),
                   );
                 },
               ),
     );
+  }
+
+  void _onOpenTicket({required BuildContext context, required TicketModel ticket}) {
+    Navigator.of(context).pushNamed(AddTicketPage.routeName, arguments: ticket);
+  }
+
+  void _onRemoveTicket({required String ticketUuid, required TicketStore ticketStore}) {
+    ticketStore.removeById(ticketUuid);
   }
 
   void _onAddNewTicket(BuildContext context) async {
