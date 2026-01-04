@@ -1,4 +1,3 @@
-import 'package:city_park_app/src/l10n/generated/app_localizations.dart';
 import 'package:city_park_app/src/l10n/l10n.dart';
 import 'package:city_park_app/src/model/ticket/ticket_model.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
@@ -41,8 +40,7 @@ class TicketManagementPage extends ConsumerWidget {
                 padding: EdgeInsets.zero,
                 buildDefaultDragHandles: false,
                 itemCount: tickets.length,
-                onReorder: (oldIndex, newIndex) =>
-                    notifier.reorder(oldIndex: oldIndex, newIndex: newIndex),
+                onReorder: (oldIndex, newIndex) => notifier.reorder(oldIndex: oldIndex, newIndex: newIndex),
                 itemBuilder: (context, index) {
                   final ticket = tickets[index];
                   final name =
@@ -60,10 +58,7 @@ class TicketManagementPage extends ConsumerWidget {
                     key: ValueKey(ticket.uuid),
                     children: [
                       ListTile(
-                        leading: ReorderableDragStartListener(
-                          index: index,
-                          child: const Icon(Icons.drag_handle),
-                        ),
+                        leading: ReorderableDragStartListener(index: index, child: const Icon(Icons.drag_handle)),
                         title: Text(name.isEmpty ? ticket.uuid : name),
                         subtitle: subtitle.isNotEmpty ? Text(subtitle) : null,
                         trailing: TextButton(
@@ -89,16 +84,17 @@ class TicketManagementPage extends ConsumerWidget {
   }
 
   void _onAddNewTicket(BuildContext context) async {
+    final l10n = context.l10n;
     final navigator = Navigator.of(context);
     final selected = await showSelectionBottomSheet(
       context: context,
-      title: context.l10n.ticketsSelectCardType,
-      items: [context.l10n.ticketSeasonPass, 'Ruhr.Topcard'],
+      title: l10n.ticketsSelectCardType,
+      items: [l10n.ticketSeasonPass, l10n.ruhrTopcard],
       labelOf: (s) => s,
     );
-    if (selected == context.l10n.ticketSeasonPass) {
+    if (selected == l10n.ticketSeasonPass) {
       navigator.pushNamed(AddTicketPage.routeName);
-    } else if (selected == 'Ruhr.Topcard') {
+    } else if (selected == l10n.ruhrTopcard) {
       navigator.pushNamed(AddTicketPage.routeNameRuhrTopCard);
     }
   }

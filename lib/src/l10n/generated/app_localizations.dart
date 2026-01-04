@@ -457,6 +457,18 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'QR-Code'**
   String get ticketsQrDialogTitle;
+
+  /// No description provided for @ruhrTopcard.
+  ///
+  /// In de, this message translates to:
+  /// **'Ruhr.Topcard'**
+  String get ruhrTopcard;
+
+  /// No description provided for @ruhrTopcardConditions.
+  ///
+  /// In de, this message translates to:
+  /// **'Berechtigt zum einmaligen Eintritt in folgende Parks:'**
+  String get ruhrTopcardConditions;
 }
 
 class _AppLocalizationsDelegate

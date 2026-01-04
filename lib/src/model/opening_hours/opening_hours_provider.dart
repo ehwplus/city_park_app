@@ -1,5 +1,4 @@
 import 'package:city_park_app/src/model/opening_hours/opening_hours.dart';
-import 'package:city_park_app/src/model/opening_hours/opening_hours_for_different_parks.dart';
 import 'package:city_park_app/src/model/park/last_used_park_provider.dart';
 import 'package:city_park_app/src/model/park/park_enum.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

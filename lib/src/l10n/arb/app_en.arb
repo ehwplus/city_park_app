@@ -256,5 +256,7 @@
   "ticketsQrDialogTitle": "QR code",
   "@ticketsQrDialogTitle": {
     "description": "Title for QR code dialog"
-  }
+  },
+  "ruhrTopcard": "Ruhr.Topcard",
+  "ruhrTopcardConditions": "Entitles you to one-time admission to the following parks:"
 }

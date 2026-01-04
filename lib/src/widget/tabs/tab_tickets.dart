@@ -6,10 +6,9 @@ import 'package:city_park_app/src/model/park/park_enum.dart';
 import 'package:city_park_app/src/model/ticket/ticket_model.dart';
 import 'package:city_park_app/src/model/ticket/ticket_store_provider.dart';
 import 'package:city_park_app/src/pages/add_ticket_page.dart';
+import 'package:city_park_app/src/pages/ticket_detail_page.dart';
 import 'package:city_park_app/src/widget/opening_hours/opening_hours_widget.dart';
-import 'package:city_park_app/src/widget/tabs/tab.dart';
 import 'package:city_park_app/src/widget/ticket/resolve_background_color.dart';
-import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,9 +32,19 @@ class TicketsTabContent extends ConsumerWidget {
     final hasTickets = tickets.isNotEmpty;
     final parkTickets = !hasTickets ? [] : tickets.where((ticket) => ticket.parks.contains(park)).toList();
 
+    final Map<Key, TicketModel> ticketByCardKey = {};
+
+    final List<CardModel> ticketCards = [];
+    for (final ticket in parkTickets) {
+      final card = _buildTicketCardWidget(context: context, ticket: ticket, park: park);
+      if (card.key != null) {
+        ticketByCardKey[card.key!] = ticket;
+      }
+      ticketCards.add(card);
+    }
+
     final List<CardModel> cards = [
-      if (parkTickets.isNotEmpty)
-        ...parkTickets.map((ticket) => _buildTicketCardWidget(context: context, ticket: ticket, park: park)),
+      ...ticketCards,
       _buildAddTicketsWidget(context, park, hasTickets: parkTickets.isNotEmpty),
     ];
     final stackHeight = _calculateStackHeight(cards.length);
@@ -55,6 +64,13 @@ class TicketsTabContent extends ConsumerWidget {
             positionFactor: _cardStackPositionFactor,
             scaleFactor: _cardStackScaleFactor,
             alignment: Alignment.topCenter,
+            onCardTap: (card) {
+              final ticket = ticketByCardKey[card.key];
+              if (ticket == null) return;
+              Navigator.of(
+                context,
+              ).pushNamed(TicketDetailPage.routeName, arguments: TicketDetailArguments(ticket: ticket, park: park));
+            },
           ),
         ),
         const SizedBox(height: 16),
@@ -85,7 +101,7 @@ class TicketsTabContent extends ConsumerWidget {
       ticket.type == TicketType.seasonPass
           ? context.l10n.ticketSeasonPass
           : ticket.type == TicketType.ruhrTopCard
-          ? 'Ruhr.Topcard'
+          ? context.l10n.ruhrTopcard
           : context.l10n.ticketSingle,
       if (ticket.cardNumber != null && ticket.cardNumber!.isNotEmpty) ticket.cardNumber!,
     ].join(' · ');

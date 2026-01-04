@@ -6,6 +6,7 @@ import 'package:city_park_app/src/pages/ticket_management_page.dart';
 import 'package:city_park_app/src/model/localization/locale_provider.dart';
 import 'package:city_park_app/src/model/ticket/ticket_model.dart';
 import 'package:city_park_app/src/pages/add_ticket_page.dart';
+import 'package:city_park_app/src/pages/ticket_detail_page.dart';
 import 'package:fl_ui_config/fl_ui_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -80,6 +81,14 @@ class CityParkApp extends StatelessWidget {
                         ),
                     settings: settings,
                   );
+                } else if (settings.name == TicketDetailPage.routeName) {
+                  final args = settings.arguments;
+                  if (args is TicketDetailArguments) {
+                    return MaterialPageRoute(
+                      builder: (_) => TicketDetailPage(args: args),
+                      settings: settings,
+                    );
+                  }
                 }
                 return null;
               },

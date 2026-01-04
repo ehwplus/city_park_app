@@ -256,5 +256,7 @@
   "ticketsQrDialogTitle": "QR-Code",
   "@ticketsQrDialogTitle": {
     "description": "Titel für QR-Code-Dialog"
-  }
+  },
+  "ruhrTopcard": "Ruhr.Topcard",
+  "ruhrTopcardConditions": "Berechtigt zum einmaligen Eintritt in folgende Parks:"
 }

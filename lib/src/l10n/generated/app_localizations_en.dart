@@ -201,4 +201,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ticketsQrDialogTitle => 'QR code';
+
+  @override
+  String get ruhrTopcard => 'Ruhr.Topcard';
+
+  @override
+  String get ruhrTopcardConditions =>
+      'Entitles you to one-time admission to the following parks:';
 }
