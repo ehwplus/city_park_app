@@ -37,9 +37,12 @@ class TicketManagementPage extends ConsumerWidget {
                   ),
                 ),
               )
-              : ListView.separated(
+              : ReorderableListView.builder(
+                padding: EdgeInsets.zero,
+                buildDefaultDragHandles: false,
                 itemCount: tickets.length,
-                separatorBuilder: (_, __) => const Divider(height: 1),
+                onReorder: (oldIndex, newIndex) =>
+                    notifier.reorder(oldIndex: oldIndex, newIndex: newIndex),
                 itemBuilder: (context, index) {
                   final ticket = tickets[index];
                   final name =
@@ -53,14 +56,24 @@ class TicketManagementPage extends ConsumerWidget {
                   }
                   final subtitle = subtitleParts.join(' · ');
 
-                  return ListTile(
-                    title: Text(name.isEmpty ? ticket.uuid : name),
-                    subtitle: subtitle.isNotEmpty ? Text(subtitle) : null,
-                    trailing: TextButton(
-                      onPressed: () async => _onRemoveTicket(ticketStore: notifier, ticketUuid: ticket.uuid),
-                      child: Text(l10n.ticketsManagementRemove),
-                    ),
-                    onTap: () => _onOpenTicket(context: context, ticket: ticket),
+                  return Column(
+                    key: ValueKey(ticket.uuid),
+                    children: [
+                      ListTile(
+                        leading: ReorderableDragStartListener(
+                          index: index,
+                          child: const Icon(Icons.drag_handle),
+                        ),
+                        title: Text(name.isEmpty ? ticket.uuid : name),
+                        subtitle: subtitle.isNotEmpty ? Text(subtitle) : null,
+                        trailing: TextButton(
+                          onPressed: () async => _onRemoveTicket(ticketStore: notifier, ticketUuid: ticket.uuid),
+                          child: Text(l10n.ticketsManagementRemove),
+                        ),
+                        onTap: () => _onOpenTicket(context: context, ticket: ticket),
+                      ),
+                      if (index < tickets.length - 1) const Divider(height: 1),
+                    ],
                   );
                 },
               ),

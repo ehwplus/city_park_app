@@ -58,6 +58,23 @@ class TicketStore extends Notifier<List<TicketModel>> {
     await _persist();
   }
 
+  Future<void> reorder({required int oldIndex, required int newIndex}) async {
+    if (oldIndex == newIndex || oldIndex < 0 || oldIndex >= state.length) {
+      return;
+    }
+    final updated = [...state];
+    if (newIndex > updated.length) {
+      newIndex = updated.length;
+    }
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+    final item = updated.removeAt(oldIndex);
+    updated.insert(newIndex, item);
+    state = updated;
+    await _persist();
+  }
+
   Future<void> clear() async {
     state = const [];
     final prefs = await SharedPreferences.getInstance();
