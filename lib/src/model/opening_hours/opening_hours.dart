@@ -3,14 +3,14 @@ import 'package:city_park_app/src/model/opening_hours/date.dart';
 class OpeningHours {
   const OpeningHours({
     required this.season,
-    required this.openingTimeType,
+    required this.openingTimeTypes,
     this.specifier,
     this.note,
     required this.openingTime,
   });
 
   final Season season;
-  final OpeningTimeType openingTimeType;
+  final Set<OpeningTimeType> openingTimeTypes;
   final String? specifier;
   final String? note;
   final TimeRange? openingTime;

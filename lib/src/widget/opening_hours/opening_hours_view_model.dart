@@ -101,7 +101,7 @@ _OpeningWindow? _openingWindowForDay(List<OpeningHours> openings, DateTime day) 
   DateTime? endTime;
 
   for (final openingHours in openings) {
-    if (openingHours.openingTimeType != OpeningTimeType.annualPass) continue;
+    if (!openingHours.openingTimeTypes.contains(OpeningTimeType.annualPass)) continue;
     final range = openingHours.openingTime;
     if (range == null) continue;
 
