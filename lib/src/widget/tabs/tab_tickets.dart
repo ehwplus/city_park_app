@@ -148,7 +148,7 @@ class TicketsTabContent extends ConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: 16),
-                    Center(child: BarcodeWidget(barcode: Barcode.qrCode(), data: ticket.qrCode!)),
+                    Center(child: BarcodeWidget(barcode: Barcode.qrCode(), data: ticket.qrCode!, height: 120)),
                     const SizedBox(height: 12),
                     Text(
                       ticket.uuid,

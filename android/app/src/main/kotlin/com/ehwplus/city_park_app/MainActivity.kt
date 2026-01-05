@@ -1,4 +1,4 @@
-package com.example.city_park_app
+package com.ehwplus.city_park_app
 
 import io.flutter.embedding.android.FlutterActivity
 
