@@ -4,6 +4,7 @@ import 'package:city_park_app/src/model/park/last_used_park_provider.dart';
 import 'package:city_park_app/src/model/park/park_enum.dart';
 import 'package:city_park_app/src/pages/settings_page.dart';
 import 'package:city_park_app/src/pages/ticket_management_page.dart';
+import 'package:city_park_app/src/widget/park_selection_overlay.dart';
 import 'package:city_park_app/src/widget/tabs/tab.dart';
 import 'package:city_park_app/src/widget/tabs/tab_events.dart';
 import 'package:city_park_app/src/widget/tabs/tab_map.dart';
@@ -23,6 +24,16 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> {
   int _currentIndex = FeatureFlags.tabArrivalEnabled ? 1 : 0;
+  bool _hasCheckedInitialPark = false;
+  bool _isShowingParkOverlay = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _ensureParkSelection();
+    });
+  }
 
   void _onTabSelected(int index) {
     setState(() {
@@ -30,10 +41,41 @@ class _HomePageState extends ConsumerState<HomePage> {
     });
   }
 
+  Future<void> _ensureParkSelection() async {
+    if (_hasCheckedInitialPark || !mounted) return;
+    _hasCheckedInitialPark = true;
+
+    await ref.read(lastUsedParkProvider.notifier).loadFromStorage();
+    if (!mounted) return;
+
+    if (ref.read(lastUsedParkProvider) == null) {
+      await _openParkSelectionOverlay(showCloseButton: false);
+    }
+  }
+
+  Future<void> _openParkSelectionOverlay({required bool showCloseButton}) async {
+    if (_isShowingParkOverlay || !mounted) return;
+
+    _isShowingParkOverlay = true;
+    try {
+      final selected = await showParkSelectionOverlay(
+        context: context,
+        showCloseButton: showCloseButton,
+        selectedPark: ref.read(lastUsedParkProvider),
+      );
+      if (!mounted || selected == null) return;
+
+      await ref.read(lastUsedParkProvider.notifier).setPark(selected);
+    } finally {
+      _isShowingParkOverlay = false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final park = ref.watch(lastUsedParkProvider) ?? ParkEnum.essenGrugapark;
+    final selectedPark = ref.watch(lastUsedParkProvider);
+    final park = selectedPark ?? ParkEnum.essenGrugapark;
     final tabs = [
       if (FeatureFlags.tabArrivalEnabled)
         TabContent(title: l10n.tabArrival, description: l10n.tabArrivalDescription, icon: Icons.directions),
@@ -52,11 +94,31 @@ class _HomePageState extends ConsumerState<HomePage> {
       if (park.eventsUrl != null) l10n.tabEvents,
     ];
 
+    final maxIndex = tabTitles.length - 1;
+    final currentIndex = _currentIndex > maxIndex ? maxIndex : _currentIndex;
+
+    if (currentIndex != _currentIndex) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          setState(() {
+            _currentIndex = currentIndex;
+          });
+        }
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 56,
-        leading: Padding(padding: const EdgeInsets.only(left: 16), child: SvgPicture.asset(park.assetPath)),
-        title: Text(tabTitles[_currentIndex]),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: InkWell(
+            onTap: () => _openParkSelectionOverlay(showCloseButton: true),
+            borderRadius: BorderRadius.circular(12),
+            child: Padding(padding: const EdgeInsets.all(4), child: SvgPicture.asset(park.assetPath)),
+          ),
+        ),
+        title: Text(tabTitles[currentIndex]),
         backgroundColor: Colors.transparent,
         systemOverlayStyle: context.isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
         actions: [
@@ -66,9 +128,9 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ],
       ),
-      body: IndexedStack(index: _currentIndex, children: tabs),
+      body: IndexedStack(index: currentIndex, children: tabs),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
+        currentIndex: currentIndex,
         onTap: _onTabSelected,
         items: [
           if (FeatureFlags.tabArrivalEnabled)

@@ -146,6 +146,18 @@ abstract class AppLocalizations {
   /// **'Erkunde den Park und entdecke Highlights in der Nähe.'**
   String get tabMapDescription;
 
+  /// Titel des Overlays zur Parkauswahl
+  ///
+  /// In de, this message translates to:
+  /// **'Park auswählen'**
+  String get parkSelectionTitle;
+
+  /// Untertitel für die Parkauswahl
+  ///
+  /// In de, this message translates to:
+  /// **'Wähle einen Park, um Tickets, Öffnungszeiten und Veranstaltungen anzuzeigen.'**
+  String get parkSelectionSubtitle;
+
   /// Titel Einstellungen
   ///
   /// In de, this message translates to:

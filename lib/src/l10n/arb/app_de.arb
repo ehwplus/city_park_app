@@ -31,6 +31,14 @@
   "@tabMapDescription": {
     "description": "Beschreibung Karte"
   },
+  "parkSelectionTitle": "Park auswählen",
+  "@parkSelectionTitle": {
+    "description": "Titel des Overlays zur Parkauswahl"
+  },
+  "parkSelectionSubtitle": "Wähle einen Park, um Tickets, Öffnungszeiten und Veranstaltungen anzuzeigen.",
+  "@parkSelectionSubtitle": {
+    "description": "Untertitel für die Parkauswahl"
+  },
   "settingsTitle": "Einstellungen",
   "@settingsTitle": {
     "description": "Titel Einstellungen"

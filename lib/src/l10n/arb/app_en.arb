@@ -31,6 +31,14 @@
   "@tabMapDescription": {
     "description": "Description for map tab"
   },
+  "parkSelectionTitle": "Choose a park",
+  "@parkSelectionTitle": {
+    "description": "Title of the overlay to pick a park"
+  },
+  "parkSelectionSubtitle": "Pick a park to see tickets, opening hours, and events.",
+  "@parkSelectionSubtitle": {
+    "description": "Subtitle shown above the park selection list"
+  },
   "settingsTitle": "Settings",
   "@settingsTitle": {
     "description": "Settings page title"

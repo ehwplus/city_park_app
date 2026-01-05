@@ -36,6 +36,13 @@ class AppLocalizationsDe extends AppLocalizations {
       'Erkunde den Park und entdecke Highlights in der Nähe.';
 
   @override
+  String get parkSelectionTitle => 'Park auswählen';
+
+  @override
+  String get parkSelectionSubtitle =>
+      'Wähle einen Park, um Tickets, Öffnungszeiten und Veranstaltungen anzuzeigen.';
+
+  @override
   String get settingsTitle => 'Einstellungen';
 
   @override

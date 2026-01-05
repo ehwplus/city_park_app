@@ -23,26 +23,27 @@ class ExploreTab extends ConsumerWidget {
         children: [
           Text(description, style: theme.textTheme.bodyMedium),
           const SizedBox(height: 16),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: InteractiveViewer(
-                minScale: 0.5,
-                maxScale: 6,
-                boundaryMargin: const EdgeInsets.all(32),
-                child: SvgPicture.asset(
-                  assetPath,
-                  fit: BoxFit.contain,
-                  placeholderBuilder: (_) => const Center(child: CircularProgressIndicator()),
-                  alignment: Alignment.topLeft,
-                  allowDrawingOutsideViewBox: true,
-                  height: double.infinity,
-                  width: double.infinity,
-                  colorFilter: null,
+          if (park.showMap)
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: InteractiveViewer(
+                  minScale: 0.5,
+                  maxScale: 6,
+                  boundaryMargin: const EdgeInsets.all(32),
+                  child: SvgPicture.asset(
+                    assetPath,
+                    fit: BoxFit.contain,
+                    placeholderBuilder: (_) => const Center(child: CircularProgressIndicator()),
+                    alignment: Alignment.topLeft,
+                    allowDrawingOutsideViewBox: true,
+                    height: double.infinity,
+                    width: double.infinity,
+                    colorFilter: null,
+                  ),
                 ),
               ),
             ),
-          ),
         ],
       ),
     );

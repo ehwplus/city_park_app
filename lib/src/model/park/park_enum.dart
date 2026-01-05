@@ -8,6 +8,7 @@ enum ParkEnum {
     assetFolder: 'essen_grugapark',
     buyTicketUrl: 'https://pretix.eu/grugapark/eintrittskarten/',
     eventsUrl: 'https://www.grugapark.de/erleben/veranstaltungskalender_2/veranstaltungskalender.de.html',
+    showMap: true,
     primaryColor: 0xFFE30613,
   ),
   dortmundWestfalenpark(
@@ -49,6 +50,7 @@ enum ParkEnum {
     required this.buyTicketUrl,
     this.eventsUrl,
     required this.primaryColor,
+    this.showMap = false,
   });
 
   final String name;
@@ -62,6 +64,8 @@ enum ParkEnum {
   final String? eventsUrl;
 
   final String assetFolder;
+
+  final bool showMap;
 
   String get assetPath => 'assets/$assetFolder/logo.svg';
 }
