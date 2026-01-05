@@ -57,7 +57,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get impressumDescription =>
-      'Füge hier die Impressumsangaben (Anbieter, Kontakt, Verantwortliche) ein.';
+      'EHW+ Services GmbH\nAngaben gemäß § 5 TMG\nSitz der Gesellschaft:\nGeorg-Herbert-Straße 8\n65519 Viernheim\n\nGeschäftsführer:\nTimo Bähr\n\nKontakt\nTelefon: 06204/7383382\n\nE-Mail: info@ehwplus.com\n\nEU-Streitschlichtung\nDie Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden Sie oben im Impressum.\n\nVerbraucherstreitbeilegung/Universalschlichtungsstelle\nWir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.';
 
   @override
   String get settingsPrivacyTileTitle => 'Datenschutz';

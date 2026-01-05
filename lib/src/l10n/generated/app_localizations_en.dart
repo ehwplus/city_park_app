@@ -57,7 +57,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get impressumDescription =>
-      'Add legal provider information, contact, and responsible persons here.';
+      'EHW+ Services GmbH\nInformation pursuant to § 5 TMG (German Telemedia Act)\nCompany headquarters:\nGeorg-Herbert-Straße 8\n65519 Viernheim, Germany\nManaging Director:\nTimo Bähr\n\nContact\nPhone: +49 (0)6204/7383382\nEmail: info@ehwplus.com\nEU dispute resolution\nThe European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr/. Our email address can be found above in the legal notice.\nConsumer dispute resolution/universal arbitration board\nWe are not prepared or obliged to participate in dispute resolution proceedings before a consumer arbitration board.';
 
   @override
   String get settingsPrivacyTileTitle => 'Privacy';
